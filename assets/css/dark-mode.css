@@ -1,0 +1,40 @@
+/* ==========================================================================
+   Dark Mode Definitions
+   ========================================================================== */
+body.dark-mode {
+  --color-bg-main: #020617; /* Slate 950 */
+  --color-bg-surface: #0f172a; /* Slate 900 */
+  --color-bg-alt: #1e293b; /* Slate 800 */
+  
+  --color-text-main: #cbd5e1; /* Slate 300 */
+  --color-text-muted: #94a3b8; /* Slate 400 */
+  --color-text-heading: #f8fafc; /* Slate 50 */
+  
+  --color-border: #334155; /* Slate 700 */
+  
+  /* Primary shifts heavily in dark mode for contrast if needed, but secondary acts as main pop */
+  --color-primary: #f8fafc;
+  --color-primary-light: #e2e8f0;
+}
+
+body.dark-mode .btn-secondary {
+  background-color: var(--color-bg-alt);
+  color: var(--color-text-heading);
+}
+body.dark-mode .btn-secondary:hover {
+  background-color: var(--color-border);
+}
+
+body.dark-mode .footer {
+  background-color: #020617; /* Even darker footer */
+  border-top: 1px solid var(--color-border);
+}
+
+/* Form Elements in dark mode */
+body.dark-mode input,
+body.dark-mode textarea,
+body.dark-mode select {
+  background-color: var(--color-bg-alt);
+  color: var(--color-text-main);
+  border-color: var(--color-border);
+}

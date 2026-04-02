@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Charter School Network</title>
+    <!-- CSS Assets -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .page-hero {
+            background: var(--color-primary);
+            color: #fff;
+            padding: 4rem 0 3rem;
+            text-align: center;
+        }
+        .contact-box {
+            background: var(--color-bg-surface);
+            padding: 2rem;
+            border-radius: var(--radius-lg);
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+        }
+        .contact-icon {
+            width: 50px; height: 50px;
+            background: var(--color-bg-alt);
+            color: var(--color-secondary);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 1rem;
+        }
+        .contact-form {
+            background: var(--color-bg-surface);
+            padding: 3rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        .form-input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            background: var(--color-bg-alt);
+            font-size: 1rem;
+            transition: border-color var(--transition-fast);
+        }
+        .form-input:focus {
+            outline: none;
+            border-color: var(--color-secondary);
+        }
+        .map-container {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            height: 400px;
+            background: var(--color-border);
+        }
+        @media (max-width: 768px) {
+            .contact-form { padding: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Main Navbar -->
+    <header class="navbar">
+        <div class="container">
+            <a href="index.html" class="navbar-brand">
+                <i data-lucide="graduation-cap"></i>
+                <span>CharterNet</span>
+            </a>
+            
+            <nav class="navbar-nav">
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link">Home <i data-lucide="chevron-down" style="width:16px;"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="index.html" class="dropdown-item">Classic Home</a>
+                        <a href="home-premium.html" class="dropdown-item">Premium Home</a>
+                    </div>
+                </div>
+                <div class="nav-item"><a href="schools.html" class="nav-link">Schools</a></div>
+                <div class="nav-item"><a href="admissions.html" class="nav-link">Admissions</a></div>
+                <div class="nav-item"><a href="curriculum.html" class="nav-link">Curriculum</a></div>
+                <div class="nav-item"><a href="community.html" class="nav-link">Community</a></div>
+                <div class="nav-item"><a href="contact.html" class="nav-link active" style="color: var(--color-secondary);">Contact</a></div>
+            </nav>
+
+            <div class="navbar-actions">
+                <a href="login.html" class="btn btn-outline">Sign In</a>
+                <a href="user-dashboard.html" class="btn btn-primary">Dashboard</a>
+                <button class="mobile-menu-toggle">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- SECTION 1: Contact Info -->
+    <section class="page-hero">
+        <div class="container">
+            <h1 class="section-title" style="color: #fff;">Get In Touch</h1>
+            <p style="color: rgba(255,255,255,0.8); max-width: 600px; margin: 1rem auto 0; font-size: 1.1rem;">Have questions about admissions or our curriculum? Our administrative team is here to help you.</p>
+        </div>
+    </section>
+
+    <!-- Content Split: Info + Form -->
+    <section class="section-padding bg-alt">
+        <div class="container grid-2" style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;">
+            
+            <!-- SECTION 1 (Part B): Contact Info Details -->
+            <div>
+                <h2 class="section-title" style="margin-bottom: 2rem;">Contact Information</h2>
+                <div style="display: flex; flex-direction: column; gap: 1.5rem; margin-bottom: 3rem;">
+                    <div class="contact-box" style="text-align: left; display: flex; gap: 1.5rem; align-items: center; padding: 1.5rem;">
+                        <div class="contact-icon" style="margin: 0;"><i data-lucide="phone"></i></div>
+                        <div>
+                            <h4 style="font-size: 1.1rem; margin-bottom: 0.2rem;">Admissions Office</h4>
+                            <p class="text-muted">1-800-CHARTER (Mon-Fri, 9am-5pm)</p>
+                        </div>
+                    </div>
+                    <div class="contact-box" style="text-align: left; display: flex; gap: 1.5rem; align-items: center; padding: 1.5rem;">
+                        <div class="contact-icon" style="margin: 0;"><i data-lucide="mail"></i></div>
+                        <div>
+                            <h4 style="font-size: 1.1rem; margin-bottom: 0.2rem;">Email Us</h4>
+                            <p class="text-muted">info@charternet.edu</p>
+                        </div>
+                    </div>
+                    <div class="contact-box" style="text-align: left; display: flex; gap: 1.5rem; align-items: center; padding: 1.5rem;">
+                        <div class="contact-icon" style="margin: 0;"><i data-lucide="map-pin"></i></div>
+                        <div>
+                            <h4 style="font-size: 1.1rem; margin-bottom: 0.2rem;">Main Headquarters</h4>
+                            <p class="text-muted">123 Education Blvd, New York, NY 10001</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 2: Form -->
+            <div>
+                <form class="contact-form">
+                    <h3 style="font-size: 1.5rem; margin-bottom: 2rem; font-family: var(--font-family-serif);">Send Us a Message</h3>
+                    <div class="grid-2" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                        <div class="form-group">
+                            <label class="form-label">First Name</label>
+                            <input type="text" class="form-input" placeholder="John" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Last Name</label>
+                            <input type="text" class="form-input" placeholder="Doe" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Email Address</label>
+                        <input type="email" class="form-input" placeholder="john@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Inquiry Type</label>
+                        <select class="form-input" required>
+                            <option value="">Select Topic...</option>
+                            <option value="admission">Admissions</option>
+                            <option value="tour">Schedule a Tour</option>
+                            <option value="support">Portal Support</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Message</label>
+                        <textarea class="form-input" rows="4" placeholder="How can we help you?" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Inquiry</button>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTION 3: Map -->
+    <section class="section-padding bg-surface">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Network Map</h2>
+                <p>Find the head office and campus locations near you.</p>
+            </div>
+            <div class="map-container">
+                <!-- Static placeholder for iframe map to ensure safe HTML -->
+                <div style="width:100%; height:100%; background: url('https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=1200&q=80') center/cover; display: flex; align-items: center; justify-content: center; position: relative;">
+                    <div style="background: var(--color-bg-surface); padding: 1rem 2rem; border-radius: var(--radius-md); box-shadow: var(--shadow-lg); font-weight: 600; color: var(--color-primary); display: flex; align-items: center; gap: 0.5rem;">
+                        <i data-lucide="map-pin" class="text-secondary"></i> Interactive Map Loaded
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: CTA / Support -->
+    <section class="section-padding bg-primary" style="text-align: center; color: #fff;">
+        <div class="container">
+            <h2 class="section-title" style="color: #fff; margin-bottom: 1.5rem;">Current Parent Needing Support?</h2>
+            <p style="max-width: 600px; margin: 0 auto 2rem; color: rgba(255,255,255,0.8); font-size: 1.1rem;">If you are an existing parent looking for support with the parent portal, student applications, or billing, please log in to your dashboard to submit a ticket.</p>
+            <a href="login.html" class="btn btn-primary" style="font-size: 1.1rem; padding: 1rem 2.5rem;">Login to Portal Hub</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="navbar-brand" style="color: #fff; margin-bottom: 1rem; filter: brightness(0) invert(1);">
+                        <i data-lucide="graduation-cap"></i> CharterNet
+                    </a>
+                    <p style="color: rgba(255,255,255,0.7); margin-top: 1rem;">Inspiring minds, shaping the future. Our connected network of schools provides top-tier education.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="schools.html">Our Schools</a></li>
+                        <li><a href="admissions.html">Admissions</a></li>
+                        <li><a href="curriculum.html">Curriculum</a></li>
+                        <li><a href="community.html">Community</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Dashboard</h4>
+                    <ul>
+                        <li><a href="login.html">Parent Portal Login</a></li>
+                        <li><a href="application-status.html">Application Status</a></li>
+                        <li><a href="contact.html">Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul style="color: rgba(255,255,255,0.7);">
+                        <li>1-800-CHARTER</li>
+                        <li>info@charternet.edu</li>
+                        <li>123 Education Blvd, NY</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2026 Charter School Network. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS Assets -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

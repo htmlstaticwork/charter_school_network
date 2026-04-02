@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>North Campus Academy | Charter School Network</title>
+    <!-- CSS Assets -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .page-hero {
+            background: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.7)), url('https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=1920&q=80') center/cover;
+            color: #fff;
+            padding: 6rem 0;
+            text-align: center;
+        }
+        .info-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255,255,255,0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            margin: 0.5rem;
+            backdrop-filter: blur(5px);
+        }
+        .facility-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Main Navbar -->
+    <header class="navbar">
+        <div class="container">
+            <a href="index.html" class="navbar-brand">
+                <i data-lucide="graduation-cap"></i>
+                <span>CharterNet</span>
+            </a>
+            
+            <nav class="navbar-nav">
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link">Home <i data-lucide="chevron-down" style="width:16px;"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="index.html" class="dropdown-item">Classic Home</a>
+                        <a href="home-premium.html" class="dropdown-item">Premium Home</a>
+                    </div>
+                </div>
+                <div class="nav-item"><a href="schools.html" class="nav-link active" style="color: var(--color-secondary);">Schools</a></div>
+                <div class="nav-item"><a href="admissions.html" class="nav-link">Admissions</a></div>
+                <div class="nav-item"><a href="curriculum.html" class="nav-link">Curriculum</a></div>
+                <div class="nav-item"><a href="community.html" class="nav-link">Community</a></div>
+                <div class="nav-item"><a href="contact.html" class="nav-link">Contact</a></div>
+            </nav>
+
+            <div class="navbar-actions">
+                <a href="login.html" class="btn btn-outline">Sign In</a>
+                <a href="user-dashboard.html" class="btn btn-primary">Dashboard</a>
+                <button class="mobile-menu-toggle">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- SECTION 1: School Overview -->
+    <section class="page-hero">
+        <div class="container">
+            <h1 class="section-title" style="color: #fff; margin-bottom: 1rem;">North Campus Academy</h1>
+            <div>
+                <span class="info-pill"><i data-lucide="map-pin" style="width:16px;"></i> Downtown District</span>
+                <span class="info-pill"><i data-lucide="users" style="width:16px;"></i> Grades K-8</span>
+                <span class="info-pill"><i data-lucide="book-open" style="width:16px;"></i> STEM Focused</span>
+            </div>
+            <p style="color: rgba(255,255,255,0.9); max-width: 800px; margin: 1.5rem auto 0; font-size: 1.1rem; line-height: 1.8;">
+                North Campus Academy is a premier institution dedicated to fostering innovation and critical thinking. Located in the heart of the city, we provide a rigorous STEM-based curriculum designed to prepare students for the challenges of tomorrow.
+            </p>
+        </div>
+    </section>
+
+    <!-- SECTION 2: Curriculum Details -->
+    <section class="section-padding bg-surface">
+        <div class="container grid-2" style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+            <div>
+                <span class="section-subtitle">Academic Focus</span>
+                <h2 class="section-title" style="margin-bottom: 1rem;">Empowering Future Innovators</h2>
+                <p style="margin-bottom: 1rem; color: var(--color-text-muted);">Our curriculum goes beyond standard academics. We integrate hands-on project-based learning with advanced technology to create an engaging environment.</p>
+                <ul style="display: flex; flex-direction: column; gap: 0.75rem;">
+                    <li style="display: flex; gap: 0.5rem;"><i data-lucide="check" class="text-secondary"></i> Comprehensive coding and robotics classes starting in 1st Grade.</li>
+                    <li style="display: flex; gap: 0.5rem;"><i data-lucide="check" class="text-secondary"></i> Advanced math tracks for accelerated learners.</li>
+                    <li style="display: flex; gap: 0.5rem;"><i data-lucide="check" class="text-secondary"></i> Environmental science integrated with local community projects.</li>
+                    <li style="display: flex; gap: 0.5rem;"><i data-lucide="check" class="text-secondary"></i> Strong emphasis on literacy and communication skills.</li>
+                </ul>
+            </div>
+            <div>
+                <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=800&q=80" alt="Students in class" style="border-radius: var(--radius-lg); box-shadow: var(--shadow-md);">
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: Facilities & Images -->
+    <section class="section-padding bg-alt">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Campus Life</span>
+                <h2 class="section-title">State-of-the-Art Facilities</h2>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=600&q=80" alt="Library" class="facility-img">
+                    <h4 style="margin-top: 1rem; font-size: 1.25rem;">Modern Library & Media Center</h4>
+                </div>
+                <div>
+                    <img src="https://images.unsplash.com/photo-1574680096145-d05b474e2155?auto=format&fit=crop&w=600&q=80" alt="Gym" class="facility-img">
+                    <h4 style="margin-top: 1rem; font-size: 1.25rem;">Indoor Athletics Facility</h4>
+                </div>
+                <div>
+                    <img src="https://images.unsplash.com/photo-1532053229711-bba6ef6dcd42?auto=format&fit=crop&w=600&q=80" alt="Lab" class="facility-img">
+                    <h4 style="margin-top: 1rem; font-size: 1.25rem;">Advanced Science Labs</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: Apply CTA -->
+    <section class="section-padding bg-surface" style="text-align: center;">
+        <div class="container">
+            <div class="card" style="padding: 4rem 2rem; background: var(--color-primary); color: #fff;">
+                <h2 class="section-title" style="color: #fff; margin-bottom: 1rem;">Ready to Join North Campus?</h2>
+                <p style="max-width: 600px; margin: 0 auto 2rem; color: rgba(255,255,255,0.8);">Applications are currently open for the Fall semester. Secure your spot today and become part of our vibrant community.</p>
+                <div style="display: flex; gap: 1rem; justify-content: center;">
+                    <a href="admissions.html" class="btn btn-primary">Start Application</a>
+                    <a href="contact.html" class="btn btn-outline" style="border-color: #fff; color: #fff;">Schedule a Tour</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="navbar-brand" style="color: #fff; margin-bottom: 1rem; filter: brightness(0) invert(1);">
+                        <i data-lucide="graduation-cap"></i> CharterNet
+                    </a>
+                    <p style="color: rgba(255,255,255,0.7); margin-top: 1rem;">Inspiring minds, shaping the future. Our connected network of schools provides top-tier education.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="schools.html">Our Schools</a></li>
+                        <li><a href="admissions.html">Admissions</a></li>
+                        <li><a href="curriculum.html">Curriculum</a></li>
+                        <li><a href="community.html">Community</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Dashboard</h4>
+                    <ul>
+                        <li><a href="login.html">Parent Portal Login</a></li>
+                        <li><a href="application-status.html">Application Status</a></li>
+                        <li><a href="contact.html">Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul style="color: rgba(255,255,255,0.7);">
+                        <li>1-800-CHARTER</li>
+                        <li>info@charternet.edu</li>
+                        <li>123 Education Blvd, NY</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2026 Charter School Network. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS Assets -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Child Profile | Dashboard</title>
+    <!-- CSS Assets -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        /* Shared Dashboard CSS via Dashboard.html */
+        body { background: var(--color-bg-alt); }
+        .dashboard-layout { display: flex; min-height: 100vh; }
+        .dashboard-sidebar {
+            width: 280px; background: var(--color-bg-surface); border-right: 1px solid var(--color-border);
+            display: flex; flex-direction: column; position: sticky; top: 0; height: 100vh; z-index: 50; transition: all var(--transition-normal);
+        }
+        .sidebar-header { padding: 1.5rem; border-bottom: 1px solid var(--color-border); display: flex; align-items: center; justify-content: space-between; }
+        .sidebar-nav { padding: 1rem 0; flex-grow: 1; overflow-y: auto; }
+        .sidebar-nav .nav-link { display: flex; align-items: center; gap: 1rem; padding: 0.8rem 1.5rem; color: var(--color-text-muted); font-weight: 500; transition: all var(--transition-fast); }
+        .sidebar-nav .nav-link:hover, .sidebar-nav .nav-link.active { color: var(--color-secondary); background: var(--color-bg-alt); border-right: 3px solid var(--color-secondary); }
+        .sidebar-nav .nav-link i { width: 20px; }
+        .sidebar-footer { padding: 1.5rem; border-top: 1px solid var(--color-border); }
+        .dashboard-main { flex: 1; display: flex; flex-direction: column; overflow-x: hidden; }
+        .dashboard-header { background: var(--color-bg-surface); padding: 1rem 2rem; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--color-border); position: sticky; top: 0; z-index: 40; }
+        .dashboard-content { padding: 2rem; max-width: 1200px; width: 100%; margin: 0 auto; }
+        .user-profile-btn { display: flex; align-items: center; gap: 0.75rem; cursor: pointer; }
+        .user-avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--color-primary); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 600; }
+        
+        .profile-header {
+            display: flex; align-items: center; gap: 2rem;
+            background: var(--color-bg-surface); padding: 2rem; border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm); margin-bottom: 2rem;
+        }
+        .child-avatar {
+            width: 100px; height: 100px; border-radius: 50%;
+            object-fit: cover; border: 3px solid var(--color-border);
+        }
+        .form-group { margin-bottom: 1.5rem; }
+        .form-label { display: block; margin-bottom: 0.5rem; font-weight: 500; font-size: 0.875rem; color: var(--color-text-muted); }
+        .form-input { 
+            width: 100%; padding: 0.75rem 1rem; border: 1px solid var(--color-border); 
+            border-radius: var(--radius-md); background: var(--color-bg-surface); 
+            font-size: 1rem;
+        }
+        .form-input:disabled { background: var(--color-bg-alt); color: var(--color-text-muted); cursor: not-allowed; }
+        
+        @media (max-width: 900px) {
+            .dashboard-layout { flex-direction: column; }
+            .dashboard-sidebar { width: 100%; height: auto; position: fixed; top: 0; left: -100%; }
+            .dashboard-sidebar.open { left: 0; }
+            .dashboard-main { padding-top: 70px; }
+            .profile-header { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="dashboard-layout">
+        <!-- Sidebar -->
+        <aside class="dashboard-sidebar">
+            <div class="sidebar-header">
+                <a href="index.html" class="navbar-brand" style="font-size: 1.25rem;">
+                    <i data-lucide="graduation-cap"></i> CharterNet
+                </a>
+                <button id="sidebar-close" class="mobile-menu-toggle" style="display: none; @media(max-width:900px){display:block;}">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <a href="user-dashboard.html" class="nav-link">
+                    <i data-lucide="layout-dashboard"></i> Dashboard Home
+                </a>
+                <a href="application-status.html" class="nav-link">
+                    <i data-lucide="file-text"></i> My Applications
+                </a>
+                <a href="child-profile.html" class="nav-link active">
+                    <i data-lucide="users"></i> Child Profile
+                </a>
+                <a href="notifications.html" class="nav-link">
+                    <i data-lucide="bell"></i> Notifications
+                </a>
+                <a href="#" class="nav-link">
+                    <i data-lucide="message-square"></i> Messages
+                </a>
+                <a href="#" class="nav-link">
+                    <i data-lucide="settings"></i> Settings
+                </a>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <a href="login.html" class="nav-link" style="color: #ef4444; display: flex; align-items: center; gap: 0.5rem; font-weight: 500;">
+                    <i data-lucide="log-out"></i> Logout
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="dashboard-main">
+            <header class="dashboard-header">
+                <div style="display: flex; align-items: center; gap: 1rem;">
+                    <button id="sidebar-toggle" style="background:none; border:none; cursor:pointer; color: var(--color-text-main); display: none; @media(max-width:900px){display:block; margin-right:1rem;}">
+                        <i data-lucide="menu"></i>
+                    </button>
+                    <h2 style="font-size: 1.25rem; font-weight: 600;">Manage Profiles</h2>
+                </div>
+                
+                <div class="user-profile-btn">
+                    <div class="user-avatar">SJ</div>
+                </div>
+            </header>
+
+            <div class="dashboard-content">
+                
+                <!-- Profile Header -->
+                <div class="profile-header">
+                    <img src="https://images.unsplash.com/photo-1595152452543-e5fc28ebc2bd?auto=format&fit=crop&w=200&q=80" alt="Child Profile" class="child-avatar">
+                    <div style="flex-grow: 1;">
+                        <h3 style="font-size: 1.5rem; margin-bottom: 0.25rem;">Leo Jenkins</h3>
+                        <p class="text-muted">Student ID: #ST-89021 • 5th Grade</p>
+                    </div>
+                    <div>
+                        <button class="btn btn-outline"><i data-lucide="edit"></i> Edit Photo</button>
+                    </div>
+                </div>
+
+                <!-- Forms Grid -->
+                <div style="display: grid; grid-template-columns: 1fr; gap: 2rem; @media(min-width: 992px){grid-template-columns: 2fr 1fr;}">
+                    
+                    <div style="background: var(--color-bg-surface); padding: 2rem; border-radius: var(--radius-lg); box-shadow: var(--shadow-sm);">
+                        <h4 style="margin-bottom: 1.5rem; font-size: 1.1rem; border-bottom: 1px solid var(--color-border); padding-bottom: 1rem;">Personal Information</h4>
+                        
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                            <div class="form-group">
+                                <label class="form-label">First Name</label>
+                                <input type="text" class="form-input" value="Leo" disabled>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Last Name</label>
+                                <input type="text" class="form-input" value="Jenkins" disabled>
+                            </div>
+                        </div>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                            <div class="form-group">
+                                <label class="form-label">Date of Birth</label>
+                                <input type="date" class="form-input" value="2015-08-14" disabled>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Assigned Campus</label>
+                                <input type="text" class="form-input" value="North Campus Academy" disabled>
+                            </div>
+                        </div>
+                        
+                        <h4 style="margin: 2rem 0 1.5rem; font-size: 1.1rem; border-bottom: 1px solid var(--color-border); padding-bottom: 1rem;">Medical Info (Emergency Copy)</h4>
+                        <div class="form-group">
+                            <label class="form-label">Allergies</label>
+                            <input type="text" class="form-input" value="Peanuts">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Primary Physician</label>
+                            <input type="text" class="form-input" value="Dr. Robert Smith (555-0192)">
+                        </div>
+
+                        <div style="display: flex; justify-content: flex-end; margin-top: 2rem;">
+                            <button class="btn btn-primary">Save Changes</button>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; flex-direction: column; gap: 2rem;">
+                        <div style="background: var(--color-bg-surface); padding: 2rem; border-radius: var(--radius-lg); box-shadow: var(--shadow-sm);">
+                            <h4 style="margin-bottom: 1.5rem; font-size: 1.1rem;">Quick Links</h4>
+                            <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                                <a href="#" style="display: flex; align-items: center; gap: 0.5rem; color: var(--color-text-main); padding: 0.75rem 0; border-bottom: 1px solid var(--color-border);">
+                                    <i data-lucide="file-check" class="text-secondary" style="width: 16px;"></i> View Report Cards
+                                </a>
+                                <a href="#" style="display: flex; align-items: center; gap: 0.5rem; color: var(--color-text-main); padding: 0.75rem 0; border-bottom: 1px solid var(--color-border);">
+                                    <i data-lucide="clipboard-list" class="text-secondary" style="width: 16px;"></i> Attendance Record
+                                </a>
+                                <a href="#" style="display: flex; align-items: center; gap: 0.5rem; color: var(--color-text-main); padding: 0.75rem 0;">
+                                    <i data-lucide="dollar-sign" class="text-secondary" style="width: 16px;"></i> Lunch Balance
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <script src="assets/js/dashboard.js"></script>
+    <script>
+        lucide.createIcons();
+        const sidebarToggle = document.getElementById('sidebar-toggle');
+        const sidebarClose = document.getElementById('sidebar-close');
+        const sidebar = document.querySelector('.dashboard-sidebar');
+        if(sidebarToggle) sidebarToggle.addEventListener('click', () => sidebar.classList.add('open'));
+        if(sidebarClose) sidebarClose.addEventListener('click', () => sidebar.classList.remove('open'));
+    </script>
+</body>
+</html>

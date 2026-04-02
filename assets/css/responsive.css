@@ -1,0 +1,102 @@
+/* ==========================================================================
+   Responsive & Mobile Logic
+   ========================================================================== */
+
+/* Tablet View */
+@media (max-width: 992px) {
+  .section-padding {
+    padding: var(--spacing-md) 0;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  /* Navbar */
+  .navbar-nav {
+    display: none; /* Hide default nav for mobile */
+  }
+  
+  .navbar-actions .btn {
+    display: none; /* Hide buttons on mobile header to save space, maybe keep one */
+  }
+
+  .mobile-menu-toggle {
+    display: block;
+  }
+
+  /* Mobile menu active state */
+  .navbar-nav.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: var(--color-bg-surface);
+    padding: 1rem;
+    box-shadow: var(--shadow-md);
+    gap: 1rem;
+    align-items: flex-start;
+  }
+  
+  .navbar-nav.active .dropdown-menu {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    box-shadow: none;
+    transform: none;
+    padding-left: 1rem;
+    display: none; /* Add JS toggle for mobile */
+  }
+
+  .navbar-nav.active .nav-item.dropdown.open .dropdown-menu {
+    display: block;
+  }
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+  .grid-2 {
+    grid-template-columns: 1fr !important;
+  }
+  .grid-3 {
+    grid-template-columns: 1fr !important;
+  }
+  .grid-4 {
+    grid-template-columns: 1fr 1fr !important;
+  }
+  
+  /* Make all main heroes stack on mobile */
+  .hero-content {
+    text-align: center;
+  }
+  .hero-actions {
+    justify-content: center;
+    flex-direction: column;
+  }
+  .hero-actions .btn {
+    width: 100%;
+  }
+
+  /* Dashboard Adjustments */
+  .dashboard-layout {
+    flex-direction: column;
+  }
+  .dashboard-sidebar {
+    width: 100%;
+    position: static;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid var(--color-border);
+  }
+}
+
+@media (max-width: 480px) {
+  .grid-4 {
+    grid-template-columns: 1fr !important;
+  }
+  .section-title {
+    font-size: 1.75rem;
+  }
+}

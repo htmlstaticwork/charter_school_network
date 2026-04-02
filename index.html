@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charter School Network | Classic</title>
+    <!-- CSS Assets -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        /* Specific Styles for Classic Home */
+        .hero-section {
+            background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1920&q=80') center/cover;
+            color: #fff;
+            padding: var(--spacing-xl) 0;
+            text-align: center;
+        }
+        .hero-content h1 {
+            color: #fff;
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+        .about-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .schools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        .school-card-img {
+            height: 200px;
+            object-fit: cover;
+            width: 100%;
+        }
+        .school-card-body {
+            padding: 1.5rem;
+        }
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+        .step-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--color-primary-light);
+            color: var(--color-secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+        }
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .testimonial-card {
+            padding: 2rem;
+            background: var(--color-bg-surface);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Main Navbar -->
+    <header class="navbar">
+        <div class="container">
+            <a href="index.html" class="navbar-brand">
+                <i data-lucide="graduation-cap"></i>
+                <span>CharterNet</span>
+            </a>
+            
+            <nav class="navbar-nav">
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link">Home <i data-lucide="chevron-down" style="width:16px;"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="index.html" class="dropdown-item">Classic Home</a>
+                        <a href="home-premium.html" class="dropdown-item">Premium Home</a>
+                    </div>
+                </div>
+                <div class="nav-item"><a href="schools.html" class="nav-link">Schools</a></div>
+                <div class="nav-item"><a href="admissions.html" class="nav-link">Admissions</a></div>
+                <div class="nav-item"><a href="curriculum.html" class="nav-link">Curriculum</a></div>
+                <div class="nav-item"><a href="community.html" class="nav-link">Community</a></div>
+                <div class="nav-item"><a href="contact.html" class="nav-link">Contact</a></div>
+            </nav>
+
+            <div class="navbar-actions">
+                <a href="login.html" class="btn btn-outline">Sign In</a>
+                <a href="user-dashboard.html" class="btn btn-primary">Dashboard</a>
+                <button class="mobile-menu-toggle">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- SECTION 1: Hero Section -->
+    <section class="hero-section">
+        <div class="container hero-content">
+            <h1>Empowering Future Leaders</h1>
+            <p style="font-size: 1.25rem; max-width: 800px; margin: 0 auto;">A growing network of charter schools committed to academic excellence, character development, and community impact.</p>
+            <div class="hero-actions">
+                <a href="schools.html" class="btn btn-primary">Explore Our Schools</a>
+                <a href="admissions.html" class="btn btn-secondary">Apply Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: About Network -->
+    <section class="section-padding bg-surface">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Our Vision</span>
+                <h2 class="section-title">Excellence in Education</h2>
+                <p>We provide a rigorous, well-rounded education that prepares students for college and beyond.</p>
+            </div>
+            <div class="about-cards">
+                <div class="card p-4 text-center" style="padding: 2rem;">
+                    <i data-lucide="book-open" class="text-secondary" style="width: 48px; height: 48px; margin-bottom: 1rem;"></i>
+                    <h3>Rigorous Academics</h3>
+                    <p class="text-muted" style="margin-top: 1rem;">Our curriculum is designed to challenge students and foster a lifelong love of learning.</p>
+                </div>
+                <div class="card p-4 text-center" style="padding: 2rem;">
+                    <i data-lucide="users" class="text-secondary" style="width: 48px; height: 48px; margin-bottom: 1rem;"></i>
+                    <h3>Community Focus</h3>
+                    <p class="text-muted" style="margin-top: 1rem;">We build strong partnerships with parents and local organizations to support student success.</p>
+                </div>
+                <div class="card p-4 text-center" style="padding: 2rem;">
+                    <i data-lucide="award" class="text-secondary" style="width: 48px; height: 48px; margin-bottom: 1rem;"></i>
+                    <h3>Character Building</h3>
+                    <p class="text-muted" style="margin-top: 1rem;">Education goes beyond academics; we focus on developing ethical and responsible leaders.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: Schools Overview -->
+    <section class="section-padding bg-alt">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Our Campuses</span>
+                <h2 class="section-title">Find a School Near You</h2>
+            </div>
+            <div class="schools-grid">
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=600&q=80" alt="North Campus" class="school-card-img">
+                    <div class="school-card-body">
+                        <h3>North Campus Academy</h3>
+                        <p class="text-muted" style="margin: 0.5rem 0 1rem;">Grades K-8 • Downtown District</p>
+                        <a href="school-details.html" class="btn btn-outline" style="width: 100%;">View Detail</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1546410531-ea4cea477149?auto=format&fit=crop&w=600&q=80" alt="West Campus" class="school-card-img">
+                    <div class="school-card-body">
+                        <h3>Westside High School</h3>
+                        <p class="text-muted" style="margin: 0.5rem 0 1rem;">Grades 9-12 • West End</p>
+                        <a href="school-details.html" class="btn btn-outline" style="width: 100%;">View Detail</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=600&q=80" alt="East Campus" class="school-card-img">
+                    <div class="school-card-body">
+                        <h3>East Prep Elementary</h3>
+                        <p class="text-muted" style="margin: 0.5rem 0 1rem;">Grades K-5 • East Side</p>
+                        <a href="school-details.html" class="btn btn-outline" style="width: 100%;">View Detail</a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center" style="margin-top: 3rem;">
+                <a href="schools.html" class="btn btn-primary">View All Schools</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: Curriculum Highlights -->
+    <section class="section-padding bg-surface">
+        <div class="container">
+            <div class="grid-2" style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+                <div>
+                    <span class="section-subtitle">Academics</span>
+                    <h2 class="section-title" style="margin-bottom: 1rem;">Innovative Curriculum</h2>
+                    <p style="margin-bottom: 1.5rem;">Our curriculum integrates STEM, arts, and humanities to provide a comprehensive education tailored to modern world demands.</p>
+                    <ul style="display: flex; flex-direction: column; gap: 1rem; margin-bottom: 2rem;">
+                        <li style="display: flex; gap: 0.5rem;"><i data-lucide="check-circle" class="text-secondary"></i> Advanced Placement (AP) Courses</li>
+                        <li style="display: flex; gap: 0.5rem;"><i data-lucide="check-circle" class="text-secondary"></i> Comprehensive Arts & Music</li>
+                        <li style="display: flex; gap: 0.5rem;"><i data-lucide="check-circle" class="text-secondary"></i> Dual Language Immersions</li>
+                    </ul>
+                    <a href="curriculum.html" class="btn btn-outline">Explore Curriculum</a>
+                </div>
+                <div>
+                    <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=800&q=80" alt="Students in class" style="border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: Admission Process -->
+    <section class="section-padding bg-primary" style="color: #fff;">
+        <div class="container">
+            <div class="section-header" style="color: #fff;">
+                <span class="section-subtitle" style="color: var(--color-secondary);">Join Us</span>
+                <h2 class="section-title" style="color: #fff;">Simple Admission Process</h2>
+            </div>
+            <div class="steps-grid">
+                <div>
+                    <div class="step-icon"><i data-lucide="user-plus"></i></div>
+                    <h3 style="color: #fff; margin-bottom: 0.5rem;">1. Create Profile</h3>
+                    <p style="color: rgba(255,255,255,0.8);">Register on our parent portal to start the process.</p>
+                </div>
+                <div>
+                    <div class="step-icon"><i data-lucide="file-text"></i></div>
+                    <h3 style="color: #fff; margin-bottom: 0.5rem;">2. Submit Form</h3>
+                    <p style="color: rgba(255,255,255,0.8);">Fill out the application online with required docs.</p>
+                </div>
+                <div>
+                    <div class="step-icon"><i data-lucide="calendar"></i></div>
+                    <h3 style="color: #fff; margin-bottom: 0.5rem;">3. Assessment</h3>
+                    <p style="color: rgba(255,255,255,0.8);">Attend an interview or baseline assessment.</p>
+                </div>
+                <div>
+                    <div class="step-icon"><i data-lucide="check"></i></div>
+                    <h3 style="color: #fff; margin-bottom: 0.5rem;">4. Enrollment</h3>
+                    <p style="color: rgba(255,255,255,0.8);">Accept your offer and join the community!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6: Testimonials -->
+    <section class="section-padding bg-alt">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Testimonials</span>
+                <h2 class="section-title">What Parents Say</h2>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div style="color: var(--color-secondary); margin-bottom: 1rem;"><i data-lucide="quote"></i></div>
+                    <p style="font-style: italic; margin-bottom: 1.5rem;">"The teachers here truly care about my child's future. The blend of academics and character building is outstanding."</p>
+                    <div style="display: flex; gap: 1rem; align-items: center;">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=100&q=80" alt="Parent" style="width: 50px; height: 50px; border-radius: 50%;">
+                        <div>
+                            <h4 style="font-size: 1rem; margin-bottom: 0.2rem;">Sarah Jenkins</h4>
+                            <span class="text-muted" style="font-size: 0.875rem;">Parent of 5th Grader</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div style="color: var(--color-secondary); margin-bottom: 1rem;"><i data-lucide="quote"></i></div>
+                    <p style="font-style: italic; margin-bottom: 1.5rem;">"We love the parent portal. It keeps us updated instantly, and the community events are fantastic!"</p>
+                    <div style="display: flex; gap: 1rem; align-items: center;">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=100&q=80" alt="Parent" style="width: 50px; height: 50px; border-radius: 50%;">
+                        <div>
+                            <h4 style="font-size: 1rem; margin-bottom: 0.2rem;">Michael Chen</h4>
+                            <span class="text-muted" style="font-size: 0.875rem;">Parent of 10th Grader</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="navbar-brand" style="color: #fff; margin-bottom: 1rem; filter: brightness(0) invert(1);">
+                        <i data-lucide="graduation-cap"></i> CharterNet
+                    </a>
+                    <p style="color: rgba(255,255,255,0.7); margin-top: 1rem;">Inspiring minds, shaping the future. Our connected network of schools provides top-tier education.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="schools.html">Our Schools</a></li>
+                        <li><a href="admissions.html">Admissions</a></li>
+                        <li><a href="curriculum.html">Curriculum</a></li>
+                        <li><a href="community.html">Community</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Dashboard</h4>
+                    <ul>
+                        <li><a href="login.html">Parent Portal Login</a></li>
+                        <li><a href="application-status.html">Application Status</a></li>
+                        <li><a href="contact.html">Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul style="color: rgba(255,255,255,0.7);">
+                        <li>1-800-CHARTER</li>
+                        <li>info@charternet.edu</li>
+                        <li>123 Education Blvd, NY</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2026 Charter School Network. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS Assets -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

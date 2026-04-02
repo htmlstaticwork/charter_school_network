@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Charter School Network</title>
+    <!-- CSS Assets -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body { background: var(--color-bg-alt); }
+        .dashboard-layout {
+            display: flex;
+            min-height: 100vh;
+        }
+        .dashboard-sidebar {
+            width: 280px;
+            background: var(--color-bg-surface);
+            border-right: 1px solid var(--color-border);
+            display: flex;
+            flex-direction: column;
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            z-index: 50;
+            transition: all var(--transition-normal);
+        }
+        .sidebar-header {
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--color-border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .sidebar-nav {
+            padding: 1rem 0;
+            flex-grow: 1;
+            overflow-y: auto;
+        }
+        .sidebar-nav .nav-link {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.8rem 1.5rem;
+            color: var(--color-text-muted);
+            font-weight: 500;
+            transition: all var(--transition-fast);
+        }
+        .sidebar-nav .nav-link:hover, .sidebar-nav .nav-link.active {
+            color: var(--color-secondary);
+            background: var(--color-bg-alt);
+            border-right: 3px solid var(--color-secondary);
+        }
+        .sidebar-nav .nav-link i { width: 20px; }
+        .sidebar-footer {
+            padding: 1.5rem;
+            border-top: 1px solid var(--color-border);
+        }
+        
+        .dashboard-main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
+        .dashboard-header {
+            background: var(--color-bg-surface);
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid var(--color-border);
+            position: sticky;
+            top: 0;
+            z-index: 40;
+        }
+        .dashboard-content {
+            padding: 2rem;
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+        }
+        
+        .metric-card {
+            background: var(--color-bg-surface);
+            padding: 1.5rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+        .metric-icon {
+            width: 50px; height: 50px;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            background: var(--color-bg-alt);
+            color: var(--color-secondary);
+            flex-shrink: 0;
+        }
+        .user-profile-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            cursor: pointer;
+        }
+        .user-avatar {
+            width: 40px; height: 40px;
+            border-radius: 50%;
+            background: var(--color-primary);
+            color: #fff;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 600;
+        }
+        
+        @media (max-width: 900px) {
+            .dashboard-layout { flex-direction: column; }
+            .dashboard-sidebar {
+                width: 100%;
+                height: auto;
+                position: fixed;
+                top: 0;
+                left: -100%;
+                transition: left 0.3s ease;
+            }
+            .dashboard-sidebar.open {
+                left: 0;
+            }
+            .dashboard-main { padding-top: 70px; }
+            .dashboard-header { position: fixed; width: 100%; top: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="dashboard-layout">
+        <!-- Sidebar -->
+        <aside class="dashboard-sidebar">
+            <div class="sidebar-header">
+                <a href="index.html" class="navbar-brand" style="font-size: 1.25rem;">
+                    <i data-lucide="graduation-cap"></i> CharterNet
+                </a>
+                <button id="sidebar-close" class="mobile-menu-toggle" style="display: none; @media(max-width:900px){display:block;}">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <a href="user-dashboard.html" class="nav-link active">
+                    <i data-lucide="layout-dashboard"></i> Dashboard Home
+                </a>
+                <a href="application-status.html" class="nav-link">
+                    <i data-lucide="file-text"></i> My Applications
+                </a>
+                <a href="child-profile.html" class="nav-link">
+                    <i data-lucide="users"></i> Child Profile
+                </a>
+                <a href="notifications.html" class="nav-link">
+                    <i data-lucide="bell"></i> Notifications
+                    <span style="background: var(--color-secondary); color: #fff; border-radius: 10px; padding: 0.1rem 0.5rem; font-size: 0.75rem; margin-left: auto;">2</span>
+                </a>
+                <a href="#" class="nav-link">
+                    <i data-lucide="message-square"></i> Messages
+                </a>
+                <a href="#" class="nav-link">
+                    <i data-lucide="settings"></i> Settings
+                </a>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <a href="login.html" class="nav-link" style="color: #ef4444; display: flex; align-items: center; gap: 0.5rem; font-weight: 500;">
+                    <i data-lucide="log-out"></i> Logout
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="dashboard-main">
+            <header class="dashboard-header">
+                <div style="display: flex; align-items: center; gap: 1rem;">
+                    <button id="sidebar-toggle" style="background:none; border:none; cursor:pointer; color: var(--color-text-main); display: none; @media(max-width:900px){display:block; margin-right:1rem;}">
+                        <i data-lucide="menu"></i>
+                    </button>
+                    <div>
+                        <h2 style="font-size: 1.25rem; font-weight: 600;">Welcome back, Sarah! 👋</h2>
+                        <span class="text-muted" style="font-size: 0.875rem;">Here is what's happening today.</span>
+                    </div>
+                </div>
+                
+                <div class="user-profile-btn">
+                    <div class="user-avatar">SJ</div>
+                    <div style="display: none; @media(min-width: 768px){display:block;}">
+                        <div style="font-weight: 600; font-size: 0.875rem;">Sarah Jenkins</div>
+                        <div class="text-muted" style="font-size: 0.75rem;">Parent Account</div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="dashboard-content">
+                
+                <!-- Metrics -->
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
+                    <div class="metric-card">
+                        <div class="metric-icon"><i data-lucide="users"></i></div>
+                        <div>
+                            <p class="text-muted" style="font-size: 0.875rem; margin-bottom: 0.2rem;">Enrolled Children</p>
+                            <h3 style="font-size: 1.5rem;">2</h3>
+                        </div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon"><i data-lucide="file-check"></i></div>
+                        <div>
+                            <p class="text-muted" style="font-size: 0.875rem; margin-bottom: 0.2rem;">Active Applications</p>
+                            <h3 style="font-size: 1.5rem;">1</h3>
+                        </div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon"><i data-lucide="bell"></i></div>
+                        <div>
+                            <p class="text-muted" style="font-size: 0.875rem; margin-bottom: 0.2rem;">Unread Notices</p>
+                            <h3 style="font-size: 1.5rem;">2</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Updates Grid -->
+                <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 1.5rem;">
+                    <!-- Left Col -->
+                    <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                        <div style="background: var(--color-bg-surface); padding: 1.5rem; border-radius: var(--radius-lg); box-shadow: var(--shadow-sm);">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+                                <h3 style="font-size: 1.1rem;">School Updates</h3>
+                                <a href="#" style="color: var(--color-secondary); font-size: 0.875rem; font-weight: 500;">View All</a>
+                            </div>
+                            
+                            <div style="display: flex; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid var(--color-border);">
+                                <div style="width: 40px; height: 40px; border-radius: 8px; background: #e0f2fe; color: #0284c7; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><i data-lucide="calendar"></i></div>
+                                <div>
+                                    <h4 style="font-size: 1rem; margin-bottom: 0.25rem;">Upcoming Parent-Teacher Conference</h4>
+                                    <p class="text-muted" style="font-size: 0.875rem;">Scheduled for Oct 22. Please book your slot via the portal.</p>
+                                    <p style="font-size: 0.75rem; color: var(--color-text-muted); margin-top: 0.5rem;">2 hours ago</p>
+                                </div>
+                            </div>
+                            <div style="display: flex; gap: 1rem; padding: 1rem 0;">
+                                <div style="width: 40px; height: 40px; border-radius: 8px; background: #fef3c7; color: #d97706; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><i data-lucide="alert-circle"></i></div>
+                                <div>
+                                    <h4 style="font-size: 1rem; margin-bottom: 0.25rem;">Uniform Policy Reminder</h4>
+                                    <p class="text-muted" style="font-size: 0.875rem;">Winter uniforms are mandatory starting Nov 1st.</p>
+                                    <p style="font-size: 0.75rem; color: var(--color-text-muted); margin-top: 0.5rem;">1 day ago</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Col -->
+                    <div>
+                        <div style="background: var(--color-bg-surface); padding: 1.5rem; border-radius: var(--radius-lg); box-shadow: var(--shadow-sm);">
+                            <h3 style="font-size: 1.1rem; margin-bottom: 1.5rem;">Quick Actions</h3>
+                            <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                                <button class="btn btn-primary" style="width: 100%; justify-content: center;"><i data-lucide="plus"></i> New Application</button>
+                                <button class="btn btn-outline" style="width: 100%; justify-content: center;"><i data-lucide="credit-card"></i> Pay Fees</button>
+                                <button class="btn btn-outline" style="width: 100%; justify-content: center;"><i data-lucide="phone"></i> Contact Support</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <script src="assets/js/dashboard.js"></script>
+    <script>
+        lucide.createIcons();
+        
+        // Inline mobile menu logic for sidebar
+        const sidebarToggle = document.getElementById('sidebar-toggle');
+        const sidebarClose = document.getElementById('sidebar-close');
+        const sidebar = document.querySelector('.dashboard-sidebar');
+        
+        if(sidebarToggle) {
+            sidebarToggle.addEventListener('click', () => {
+                sidebar.classList.add('open');
+            });
+        }
+        if(sidebarClose) {
+            sidebarClose.addEventListener('click', () => {
+                sidebar.classList.remove('open');
+            });
+        }
+    </script>
+</body>
+</html>

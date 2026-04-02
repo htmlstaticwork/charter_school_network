@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Schools | Charter School Network</title>
+    <!-- CSS Assets -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .page-hero {
+            background: var(--color-primary);
+            color: #fff;
+            padding: 4rem 0 3rem;
+            text-align: center;
+        }
+        .filter-bar {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        .filter-btn {
+            padding: 0.5rem 1.5rem;
+            border-radius: 2rem;
+            border: 1px solid var(--color-border);
+            background: var(--color-bg-surface);
+            cursor: pointer;
+            transition: all var(--transition-fast);
+        }
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--color-secondary);
+            color: #fff;
+            border-color: var(--color-secondary);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Main Navbar -->
+    <header class="navbar">
+        <div class="container">
+            <a href="index.html" class="navbar-brand">
+                <i data-lucide="graduation-cap"></i>
+                <span>CharterNet</span>
+            </a>
+            
+            <nav class="navbar-nav">
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link">Home <i data-lucide="chevron-down" style="width:16px;"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="index.html" class="dropdown-item">Classic Home</a>
+                        <a href="home-premium.html" class="dropdown-item">Premium Home</a>
+                    </div>
+                </div>
+                <div class="nav-item"><a href="schools.html" class="nav-link active" style="color: var(--color-secondary);">Schools</a></div>
+                <div class="nav-item"><a href="admissions.html" class="nav-link">Admissions</a></div>
+                <div class="nav-item"><a href="curriculum.html" class="nav-link">Curriculum</a></div>
+                <div class="nav-item"><a href="community.html" class="nav-link">Community</a></div>
+                <div class="nav-item"><a href="contact.html" class="nav-link">Contact</a></div>
+            </nav>
+
+            <div class="navbar-actions">
+                <a href="login.html" class="btn btn-outline">Sign In</a>
+                <a href="user-dashboard.html" class="btn btn-primary">Dashboard</a>
+                <button class="mobile-menu-toggle">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- SECTION 1: Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1 class="section-title" style="color: #fff;">Our Campuses</h1>
+            <p style="color: rgba(255,255,255,0.8); max-width: 600px; margin: 1rem auto 0; font-size: 1.1rem;">Discover the perfect environment for your child's educational journey across our multiple state-of-the-art locations.</p>
+        </div>
+    </section>
+
+    <!-- SECTION 2: Filter / Categories -->
+    <section class="section-padding bg-surface" style="padding-bottom: 0;">
+        <div class="container">
+            <div class="filter-bar">
+                <button class="filter-btn active">All Campuses</button>
+                <button class="filter-btn">Elementary (K-5)</button>
+                <button class="filter-btn">Middle School (6-8)</button>
+                <button class="filter-btn">High School (9-12)</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: Schools List/Grid -->
+    <section class="section-padding bg-surface">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem;">
+                <!-- School Card 1 -->
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=600&q=80" alt="North Campus" style="height: 250px; object-fit: cover; width: 100%;">
+                    <div style="padding: 1.5rem;">
+                        <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">North Campus Academy</h3>
+                        <p class="text-muted"><i data-lucide="map-pin" style="width: 16px; display: inline-block;"></i> Downtown District</p>
+                        <div style="display: flex; gap: 0.5rem; margin: 1rem 0;">
+                            <span style="background: var(--color-bg-alt); padding: 0.2rem 0.5rem; border-radius: var(--radius-sm); font-size: 0.8rem; color: var(--color-primary);">Grades K-8</span>
+                            <span style="background: var(--color-bg-alt); padding: 0.2rem 0.5rem; border-radius: var(--radius-sm); font-size: 0.8rem; color: var(--color-primary);">STEM Focused</span>
+                        </div>
+                        <a href="school-details.html" class="btn btn-outline" style="width: 100%;">View Detail</a>
+                    </div>
+                </div>
+                <!-- School Card 2 -->
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1546410531-ea4cea477149?auto=format&fit=crop&w=600&q=80" alt="West Campus" style="height: 250px; object-fit: cover; width: 100%;">
+                    <div style="padding: 1.5rem;">
+                        <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Westside High School</h3>
+                        <p class="text-muted"><i data-lucide="map-pin" style="width: 16px; display: inline-block;"></i> West End</p>
+                        <div style="display: flex; gap: 0.5rem; margin: 1rem 0;">
+                            <span style="background: var(--color-bg-alt); padding: 0.2rem 0.5rem; border-radius: var(--radius-sm); font-size: 0.8rem; color: var(--color-primary);">Grades 9-12</span>
+                            <span style="background: var(--color-bg-alt); padding: 0.2rem 0.5rem; border-radius: var(--radius-sm); font-size: 0.8rem; color: var(--color-primary);">Arts & IB Program</span>
+                        </div>
+                        <a href="school-details.html" class="btn btn-outline" style="width: 100%;">View Detail</a>
+                    </div>
+                </div>
+                <!-- School Card 3 -->
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=600&q=80" alt="East Campus" style="height: 250px; object-fit: cover; width: 100%;">
+                    <div style="padding: 1.5rem;">
+                        <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">East Prep Elementary</h3>
+                        <p class="text-muted"><i data-lucide="map-pin" style="width: 16px; display: inline-block;"></i> East Side</p>
+                        <div style="display: flex; gap: 0.5rem; margin: 1rem 0;">
+                            <span style="background: var(--color-bg-alt); padding: 0.2rem 0.5rem; border-radius: var(--radius-sm); font-size: 0.8rem; color: var(--color-primary);">Grades K-5</span>
+                            <span style="background: var(--color-bg-alt); padding: 0.2rem 0.5rem; border-radius: var(--radius-sm); font-size: 0.8rem; color: var(--color-primary);">Dual Language</span>
+                        </div>
+                        <a href="school-details.html" class="btn btn-outline" style="width: 100%;">View Detail</a>
+                    </div>
+                </div>
+                <!-- School Card 4 -->
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=600&q=80" alt="South Campus" style="height: 250px; object-fit: cover; width: 100%;">
+                    <div style="padding: 1.5rem;">
+                        <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">South Innovation Academy</h3>
+                        <p class="text-muted"><i data-lucide="map-pin" style="width: 16px; display: inline-block;"></i> South Valley</p>
+                        <div style="display: flex; gap: 0.5rem; margin: 1rem 0;">
+                            <span style="background: var(--color-bg-alt); padding: 0.2rem 0.5rem; border-radius: var(--radius-sm); font-size: 0.8rem; color: var(--color-primary);">Grades 6-12</span>
+                            <span style="background: var(--color-bg-alt); padding: 0.2rem 0.5rem; border-radius: var(--radius-sm); font-size: 0.8rem; color: var(--color-primary);">Technology Hub</span>
+                        </div>
+                        <a href="school-details.html" class="btn btn-outline" style="width: 100%;">View Detail</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: CTA / Contact -->
+    <section class="section-padding bg-alt">
+        <div class="container text-center">
+            <h2 class="section-title">Not Sure Which Campus Fits Best?</h2>
+            <p style="max-width: 600px; margin: 1rem auto 2rem;">Our admissions counselors are here to help you navigate our options and find the perfect match for your child.</p>
+            <div style="display: flex; gap: 1rem; justify-content: center;">
+                <a href="contact.html" class="btn btn-primary">Contact Admissions</a>
+                <a href="admissions.html" class="btn btn-outline">Read Admission Guidelines</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="navbar-brand" style="color: #fff; margin-bottom: 1rem; filter: brightness(0) invert(1);">
+                        <i data-lucide="graduation-cap"></i> CharterNet
+                    </a>
+                    <p style="color: rgba(255,255,255,0.7); margin-top: 1rem;">Inspiring minds, shaping the future. Our connected network of schools provides top-tier education.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="schools.html">Our Schools</a></li>
+                        <li><a href="admissions.html">Admissions</a></li>
+                        <li><a href="curriculum.html">Curriculum</a></li>
+                        <li><a href="community.html">Community</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Dashboard</h4>
+                    <ul>
+                        <li><a href="login.html">Parent Portal Login</a></li>
+                        <li><a href="application-status.html">Application Status</a></li>
+                        <li><a href="contact.html">Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul style="color: rgba(255,255,255,0.7);">
+                        <li>1-800-CHARTER</li>
+                        <li>info@charternet.edu</li>
+                        <li>123 Education Blvd, NY</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2026 Charter School Network. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS Assets -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

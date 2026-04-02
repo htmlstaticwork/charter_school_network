@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curriculum | Charter School Network</title>
+    <!-- CSS Assets -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .page-hero {
+            background: var(--color-primary);
+            color: #fff;
+            padding: 4rem 0 3rem;
+            text-align: center;
+        }
+        .program-card {
+            background: var(--color-bg-surface);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: transform var(--transition-normal);
+        }
+        .program-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+        .program-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .program-body {
+            padding: 2rem;
+        }
+        .method-item {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .method-icon {
+            width: 60px; height: 60px;
+            background: var(--color-bg-alt);
+            border-radius: var(--radius-md);
+            display: flex; align-items: center; justify-content: center;
+            color: var(--color-secondary);
+            flex-shrink: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Main Navbar -->
+    <header class="navbar">
+        <div class="container">
+            <a href="index.html" class="navbar-brand">
+                <i data-lucide="graduation-cap"></i>
+                <span>CharterNet</span>
+            </a>
+            
+            <nav class="navbar-nav">
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link">Home <i data-lucide="chevron-down" style="width:16px;"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="index.html" class="dropdown-item">Classic Home</a>
+                        <a href="home-premium.html" class="dropdown-item">Premium Home</a>
+                    </div>
+                </div>
+                <div class="nav-item"><a href="schools.html" class="nav-link">Schools</a></div>
+                <div class="nav-item"><a href="admissions.html" class="nav-link">Admissions</a></div>
+                <div class="nav-item"><a href="curriculum.html" class="nav-link active" style="color: var(--color-secondary);">Curriculum</a></div>
+                <div class="nav-item"><a href="community.html" class="nav-link">Community</a></div>
+                <div class="nav-item"><a href="contact.html" class="nav-link">Contact</a></div>
+            </nav>
+
+            <div class="navbar-actions">
+                <a href="login.html" class="btn btn-outline">Sign In</a>
+                <a href="user-dashboard.html" class="btn btn-primary">Dashboard</a>
+                <button class="mobile-menu-toggle">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- SECTION 1: Overview -->
+    <section class="page-hero">
+        <div class="container">
+            <h1 class="section-title" style="color: #fff;">Our Educational Philosophy</h1>
+            <p style="color: rgba(255,255,255,0.8); max-width: 700px; margin: 1rem auto 0; font-size: 1.1rem; line-height: 1.6;">A modern curriculum designed to be responsive, rigorous, and relevant. We focus on developing the whole child through a balance of academic excellence and character development.</p>
+        </div>
+    </section>
+
+    <!-- SECTION 2: Programs Offered -->
+    <section class="section-padding bg-alt">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Core Programs</span>
+                <h2 class="section-title">What We Teach</h2>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                <div class="program-card">
+                    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80" alt="STEM" class="program-img">
+                    <div class="program-body">
+                        <h3 style="margin-bottom: 0.5rem; font-size: 1.5rem;">S.T.E.M. Focus</h3>
+                        <p class="text-muted">Integrated Science, Technology, Engineering, and Math from elementary through high school.</p>
+                    </div>
+                </div>
+                <div class="program-card">
+                    <img src="https://images.unsplash.com/photo-1514580459779-13837f4007d3?auto=format&fit=crop&w=600&q=80" alt="Arts" class="program-img">
+                    <div class="program-body">
+                        <h3 style="margin-bottom: 0.5rem; font-size: 1.5rem;">Visual & Performing Arts</h3>
+                        <p class="text-muted">Fostering creativity through music, theater, painting, and digital media design.</p>
+                    </div>
+                </div>
+                <div class="program-card">
+                    <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=600&q=80" alt="Language" class="program-img">
+                    <div class="program-body">
+                        <h3 style="margin-bottom: 0.5rem; font-size: 1.5rem;">Global Languages</h3>
+                        <p class="text-muted">Dual language tracks and comprehensive foreign language requirements for all students.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: Teaching Method -->
+    <section class="section-padding bg-surface">
+        <div class="container grid-2" style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: flex-start;">
+            <div>
+                <span class="section-subtitle">Pedagogy</span>
+                <h2 class="section-title" style="margin-bottom: 2rem;">How We Teach</h2>
+                <div class="method-item">
+                    <div class="method-icon"><i data-lucide="users"></i></div>
+                    <div>
+                        <h4 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Project-Based Learning</h4>
+                        <p class="text-muted">Students learn by actively engaging in real-world and personally meaningful projects.</p>
+                    </div>
+                </div>
+                <div class="method-item">
+                    <div class="method-icon"><i data-lucide="monitor"></i></div>
+                    <div>
+                        <h4 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Blended Classrooms</h4>
+                        <p class="text-muted">Combining traditional face-to-face instruction with state-of-the-art digital tools.</p>
+                    </div>
+                </div>
+                <div class="method-item">
+                    <div class="method-icon"><i data-lucide="target"></i></div>
+                    <div>
+                        <h4 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Personalized Tracks</h4>
+                        <p class="text-muted">Learning tailored to the preferences, interests, and needs of individual learners.</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=800&q=80" alt="Teaching" style="border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);">
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: Outcomes / Results -->
+    <section class="section-padding bg-primary" style="color: #fff; text-align: center;">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle" style="color: var(--color-secondary);">Results</span>
+                <h2 class="section-title" style="color: #fff;">Proven Outcomes</h2>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
+                <div>
+                    <h3 style="font-size: 3rem; font-family: var(--font-family-serif); color: var(--color-secondary);">top 5%</h3>
+                    <p style="font-weight: 500;">In State Testing</p>
+                </div>
+                <div>
+                    <h3 style="font-size: 3rem; font-family: var(--font-family-serif); color: var(--color-secondary);">98%</h3>
+                    <p style="font-weight: 500;">Graduation Rate</p>
+                </div>
+                <div>
+                    <h3 style="font-size: 3rem; font-family: var(--font-family-serif); color: var(--color-secondary);">100%</h3>
+                    <p style="font-weight: 500;">College Acceptance</p>
+                </div>
+            </div>
+            <a href="admissions.html" class="btn btn-primary" style="font-size: 1.1rem; padding: 1rem 2rem;">Apply To Join Our Network</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="navbar-brand" style="color: #fff; margin-bottom: 1rem; filter: brightness(0) invert(1);">
+                        <i data-lucide="graduation-cap"></i> CharterNet
+                    </a>
+                    <p style="color: rgba(255,255,255,0.7); margin-top: 1rem;">Inspiring minds, shaping the future. Our connected network of schools provides top-tier education.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="schools.html">Our Schools</a></li>
+                        <li><a href="admissions.html">Admissions</a></li>
+                        <li><a href="curriculum.html">Curriculum</a></li>
+                        <li><a href="community.html">Community</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Dashboard</h4>
+                    <ul>
+                        <li><a href="login.html">Parent Portal Login</a></li>
+                        <li><a href="application-status.html">Application Status</a></li>
+                        <li><a href="contact.html">Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul style="color: rgba(255,255,255,0.7);">
+                        <li>1-800-CHARTER</li>
+                        <li>info@charternet.edu</li>
+                        <li>123 Education Blvd, NY</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2026 Charter School Network. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS Assets -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

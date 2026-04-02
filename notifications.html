@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifications | Dashboard</title>
+    <!-- CSS Assets -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        /* Shared Dashboard CSS via Dashboard.html */
+        body { background: var(--color-bg-alt); }
+        .dashboard-layout { display: flex; min-height: 100vh; }
+        .dashboard-sidebar {
+            width: 280px; background: var(--color-bg-surface); border-right: 1px solid var(--color-border);
+            display: flex; flex-direction: column; position: sticky; top: 0; height: 100vh; z-index: 50; transition: all var(--transition-normal);
+        }
+        .sidebar-header { padding: 1.5rem; border-bottom: 1px solid var(--color-border); display: flex; align-items: center; justify-content: space-between; }
+        .sidebar-nav { padding: 1rem 0; flex-grow: 1; overflow-y: auto; }
+        .sidebar-nav .nav-link { display: flex; align-items: center; gap: 1rem; padding: 0.8rem 1.5rem; color: var(--color-text-muted); font-weight: 500; transition: all var(--transition-fast); }
+        .sidebar-nav .nav-link:hover, .sidebar-nav .nav-link.active { color: var(--color-secondary); background: var(--color-bg-alt); border-right: 3px solid var(--color-secondary); }
+        .sidebar-nav .nav-link i { width: 20px; }
+        .sidebar-footer { padding: 1.5rem; border-top: 1px solid var(--color-border); }
+        .dashboard-main { flex: 1; display: flex; flex-direction: column; overflow-x: hidden; }
+        .dashboard-header { background: var(--color-bg-surface); padding: 1rem 2rem; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--color-border); position: sticky; top: 0; z-index: 40; }
+        .dashboard-content { padding: 2rem; max-width: 1000px; width: 100%; margin: 0 auto; }
+        .user-profile-btn { display: flex; align-items: center; gap: 0.75rem; cursor: pointer; }
+        .user-avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--color-primary); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 600; }
+        
+        .notification-item {
+            background: var(--color-bg-surface);
+            padding: 1.5rem;
+            border-radius: var(--radius-lg);
+            margin-bottom: 1rem;
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+            transition: background var(--transition-fast);
+        }
+        .notification-item.unread {
+            background: rgba(217, 119, 6, 0.05);
+            border-left: 4px solid var(--color-secondary);
+        }
+        .notification-icon {
+            width: 48px; height: 48px; border-radius: 50%;
+            background: var(--color-bg-alt);
+            display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0; color: var(--color-text-muted);
+        }
+        .notification-item.unread .notification-icon {
+            background: rgba(217, 119, 6, 0.1);
+            color: var(--color-secondary);
+        }
+        .time-stamp { font-size: 0.8rem; color: var(--color-text-muted); margin-top: 0.5rem; }
+        
+        @media (max-width: 900px) {
+            .dashboard-layout { flex-direction: column; }
+            .dashboard-sidebar { width: 100%; height: auto; position: fixed; top: 0; left: -100%; }
+            .dashboard-sidebar.open { left: 0; }
+            .dashboard-main { padding-top: 70px; }
+            .notification-item { gap: 1rem; padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="dashboard-layout">
+        <!-- Sidebar -->
+        <aside class="dashboard-sidebar">
+            <div class="sidebar-header">
+                <a href="index.html" class="navbar-brand" style="font-size: 1.25rem;">
+                    <i data-lucide="graduation-cap"></i> CharterNet
+                </a>
+                <button id="sidebar-close" class="mobile-menu-toggle" style="display: none; @media(max-width:900px){display:block;}">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <a href="user-dashboard.html" class="nav-link">
+                    <i data-lucide="layout-dashboard"></i> Dashboard Home
+                </a>
+                <a href="application-status.html" class="nav-link">
+                    <i data-lucide="file-text"></i> My Applications
+                </a>
+                <a href="child-profile.html" class="nav-link">
+                    <i data-lucide="users"></i> Child Profile
+                </a>
+                <a href="notifications.html" class="nav-link active">
+                    <i data-lucide="bell"></i> Notifications
+                    <span style="background: var(--color-secondary); color: #fff; border-radius: 10px; padding: 0.1rem 0.5rem; font-size: 0.75rem; margin-left: auto;">2</span>
+                </a>
+                <a href="#" class="nav-link">
+                    <i data-lucide="message-square"></i> Messages
+                </a>
+                <a href="#" class="nav-link">
+                    <i data-lucide="settings"></i> Settings
+                </a>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <a href="login.html" class="nav-link" style="color: #ef4444; display: flex; align-items: center; gap: 0.5rem; font-weight: 500;">
+                    <i data-lucide="log-out"></i> Logout
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="dashboard-main">
+            <header class="dashboard-header">
+                <div style="display: flex; align-items: center; gap: 1rem;">
+                    <button id="sidebar-toggle" style="background:none; border:none; cursor:pointer; color: var(--color-text-main); display: none; @media(max-width:900px){display:block; margin-right:1rem;}">
+                        <i data-lucide="menu"></i>
+                    </button>
+                    <h2 style="font-size: 1.25rem; font-weight: 600;">Notifications</h2>
+                </div>
+                
+                <div class="user-profile-btn">
+                    <div class="user-avatar">SJ</div>
+                </div>
+            </header>
+
+            <div class="dashboard-content">
+                
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+                    <div>
+                        <button class="btn btn-outline" style="padding: 0.5rem 1rem; margin-right: 0.5rem;">All</button>
+                        <button class="btn" style="padding: 0.5rem 1rem; border: 1px solid transparent;">Unread</button>
+                    </div>
+                    <button style="background: none; border: none; color: var(--color-text-muted); font-size: 0.875rem; cursor: pointer;">Mark all as read</button>
+                </div>
+
+                <div class="notifications-list">
+                    
+                    <div class="notification-item unread">
+                        <div class="notification-icon"><i data-lucide="file-text"></i></div>
+                        <div>
+                            <h4 style="font-size: 1.05rem; margin-bottom: 0.25rem;">Application Update: In Review</h4>
+                            <p class="text-muted" style="font-size: 0.95rem;">The application for Leo Jenkins has moved to the "In Review" phase. No further action is required at this time.</p>
+                            <div class="time-stamp">Today at 10:42 AM</div>
+                        </div>
+                    </div>
+                    
+                    <div class="notification-item unread">
+                        <div class="notification-icon"><i data-lucide="credit-card"></i></div>
+                        <div>
+                            <h4 style="font-size: 1.05rem; margin-bottom: 0.25rem;">Lunch Balance Low</h4>
+                            <p class="text-muted" style="font-size: 0.95rem;">The lunch balance for Leo is below $10.00. Please top up the account soon.</p>
+                            <div class="time-stamp">Yesterday at 3:15 PM</div>
+                            <div style="margin-top: 0.75rem;">
+                                <button class="btn btn-primary" style="padding: 0.4rem 1rem; font-size: 0.8rem;">Top Up Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="notification-item">
+                        <div class="notification-icon"><i data-lucide="calendar"></i></div>
+                        <div>
+                            <h4 style="font-size: 1.05rem; margin-bottom: 0.25rem;">Event Reminder: Fall Festival</h4>
+                            <p class="text-muted" style="font-size: 0.95rem;">Don't forget the Fall Festival is happening this weekend on all campuses. We hope to see you there!</p>
+                            <div class="time-stamp">Monday at 9:00 AM</div>
+                        </div>
+                    </div>
+                    
+                    <div class="notification-item">
+                        <div class="notification-icon"><i data-lucide="shield-check"></i></div>
+                        <div>
+                            <h4 style="font-size: 1.05rem; margin-bottom: 0.25rem;">Security Policy Update</h4>
+                            <p class="text-muted" style="font-size: 0.95rem;">Please review the updated visitor policy for the North Campus starting Nov 1st.</p>
+                            <div class="time-stamp">Oct 10 at 4:30 PM</div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <script src="assets/js/dashboard.js"></script>
+    <script>
+        lucide.createIcons();
+        const sidebarToggle = document.getElementById('sidebar-toggle');
+        const sidebarClose = document.getElementById('sidebar-close');
+        const sidebar = document.querySelector('.dashboard-sidebar');
+        if(sidebarToggle) sidebarToggle.addEventListener('click', () => sidebar.classList.add('open'));
+        if(sidebarClose) sidebarClose.addEventListener('click', () => sidebar.classList.remove('open'));
+    </script>
+</body>
+</html>

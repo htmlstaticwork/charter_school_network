@@ -62,6 +62,7 @@
             .step-item { gap: 1rem; }
         }
     </style>
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
 </head>
 <body>
 
@@ -86,14 +87,18 @@
                 <div class="nav-item"><a href="curriculum.html" class="nav-link">Curriculum</a></div>
                 <div class="nav-item"><a href="community.html" class="nav-link">Community</a></div>
                 <div class="nav-item"><a href="contact.html" class="nav-link">Contact</a></div>
+                <div class="nav-item nav-mobile-only"><a href="login.html" class="btn btn-outline" style="width: 100%;">Login</a></div>
+                <div class="nav-item nav-mobile-only"><a href="user-dashboard.html" class="btn btn-primary" style="width: 100%;">Dashboard</a></div>
             </nav>
 
             <div class="navbar-actions">
-                <button id="rtl-toggle" class="theme-toggle" aria-label="Toggle RTL"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></svg></button>
-                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg></button>
+                
+                
 
-                <a href="login.html" class="btn btn-outline">Sign In</a>
+                <a href="login.html" class="btn btn-outline">Login</a>
                 <a href="user-dashboard.html" class="btn btn-primary">Dashboard</a>
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg></button>
+                <button id="rtl-toggle" class="theme-toggle" aria-label="Toggle RTL"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></svg></button>
                 <button class="mobile-menu-toggle">
                     <i data-lucide="menu"></i>
                 </button>
@@ -176,13 +181,13 @@
     </section>
 
     <!-- SECTION 4: Apply Now CTA -->
-    <section class="section-padding bg-alt" style="text-align: center;">
+    <section class="section-padding" style="background: var(--color-primary); color: #fff; text-align: left;">
         <div class="container">
-            <div style="background: var(--color-primary); padding: 4rem 2rem; border-radius: var(--radius-lg); color: #fff;">
-                <h2 class="section-title" style="color: var(--color-text-on-primary); margin-bottom: 1.5rem;">Ready to Begin?</h2>
-                <p style="max-width: 600px; margin: 0 auto 2rem; color: rgba(255,255,255,0.8); font-size: 1.1rem;">Take the first step toward a brighter future for your child. Our application portal is now open.</p>
-                <a href="signup.html" class="btn btn-primary" style="font-size: 1.1rem; padding: 1rem 2rem;">Create Parent Account</a>
-                <p style="margin-top: 1rem; font-size: 0.875rem; color: rgba(255,255,255,0.5);">Already have an account? <a href="login.html" style="color: var(--color-secondary); text-decoration: underline;">Log in here</a></p>
+            <h2 class="section-title" style="color: var(--color-text-on-primary); margin-bottom: 1.5rem;">Ready to Begin?</h2>
+            <p style="max-width: 600px; margin: 0 0 2rem; color: rgba(255,255,255,0.8); font-size: 1.1rem;">Take the first step toward a brighter future for your child. Our application portal is now open.</p>
+            <div style="display: flex; gap: 1rem; justify-content: flex-start;">
+                <a href="signup.html" class="btn btn-primary" style="font-size: 1.1rem; padding: 1rem 2.5rem;">Create Parent Account</a>
+                <a href="contact.html" class="btn btn-outline-white" style="font-size: 1.1rem; padding: 1rem 2.5rem;">Request Info</a>
             </div>
         </div>
     </section>
@@ -192,9 +197,9 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <a href="index.html" class="navbar-brand" style="color: var(--color-text-on-primary); margin-bottom: 1rem; filter: brightness(0) invert(1);">
-                        <i data-lucide="graduation-cap"></i> CharterHub
-
+                    <a href="index.html" class="navbar-brand" style="margin-bottom: 1rem;">
+                        <i data-lucide="graduation-cap"></i>
+                        <span>CharterHub</span>
                     </a>
                     <p style="color: rgba(255,255,255,0.7); margin-top: 1rem;">Inspiring minds, shaping the future. Our connected network of schools provides top-tier education.</p>
                                                             <div class="footer-social" style="display: flex; gap: 1rem; margin-top: 1.5rem;">

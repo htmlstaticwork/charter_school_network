@@ -12,6 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
     
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
 </head>
 <body>
 
@@ -36,14 +37,18 @@
                 <div class="nav-item"><a href="curriculum.html" class="nav-link">Curriculum</a></div>
                 <div class="nav-item"><a href="community.html" class="nav-link">Community</a></div>
                 <div class="nav-item"><a href="contact.html" class="nav-link">Contact</a></div>
+                <div class="nav-item nav-mobile-only"><a href="login.html" class="btn btn-outline" style="width: 100%;">Login</a></div>
+                <div class="nav-item nav-mobile-only"><a href="user-dashboard.html" class="btn btn-primary" style="width: 100%;">Dashboard</a></div>
             </nav>
 
             <div class="navbar-actions">
-                <button id="rtl-toggle" class="theme-toggle" aria-label="Toggle RTL"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></svg></button>
-                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg></button>
+                
+                
 
-                <a href="login.html" class="btn btn-outline">Sign In</a>
+                <a href="login.html" class="btn btn-outline">Login</a>
                 <a href="user-dashboard.html" class="btn btn-primary">Dashboard</a>
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg></button>
+                <button id="rtl-toggle" class="theme-toggle" aria-label="Toggle RTL"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></svg></button>
                 <button class="mobile-menu-toggle">
                     <i data-lucide="menu"></i>
                 </button>
@@ -74,14 +79,14 @@
     <!-- SECTION 3: Schools List/Grid -->
     <section class="section-padding bg-surface">
         <div class="container">
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem;">
+            <div class="schools-grid">
                 <!-- School Card 1 -->
                 <div class="card">
-                    <img src="assets/images/north-campus.png" alt="North Campus" style="height: 250px; object-fit: cover; width: 100%;">
-                    <div style="padding: 1.5rem;">
+                    <img src="assets/images/north-campus.png" alt="North Campus" class="school-card-img">
+                    <div class="school-card-body">
                         <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">North Campus Academy</h3>
-                        <p class="text-muted"><i data-lucide="map-pin" style="width: 16px; display: inline-block;"></i> Downtown District</p>
-                        <div style="display: flex; gap: 0.5rem; margin: 1rem 0;">
+                        <p class="school-location"><i data-lucide="map-pin" style="width: 16px;"></i> Downtown District</p>
+                        <div class="school-card-badges">
                             <span style="background: var(--color-bg-alt); padding: 0.2rem 0.5rem; border-radius: var(--radius-sm); font-size: 0.8rem; color: var(--color-primary);">Grades K-8</span>
                             <span style="background: var(--color-bg-alt); padding: 0.2rem 0.5rem; border-radius: var(--radius-sm); font-size: 0.8rem; color: var(--color-primary);">STEM Focused</span>
                         </div>
@@ -90,11 +95,11 @@
                 </div>
                 <!-- School Card 2 -->
                 <div class="card">
-                    <img src="assets/images/west-campus.png" alt="West Campus" style="height: 250px; object-fit: cover; width: 100%;">
-                    <div style="padding: 1.5rem;">
+                    <img src="assets/images/west-campus.png" alt="West Campus" class="school-card-img">
+                    <div class="school-card-body">
                         <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Westside High School</h3>
-                        <p class="text-muted"><i data-lucide="map-pin" style="width: 16px; display: inline-block;"></i> West End</p>
-                        <div style="display: flex; gap: 0.5rem; margin: 1rem 0;">
+                        <p class="school-location"><i data-lucide="map-pin" style="width: 16px;"></i> West End</p>
+                        <div class="school-card-badges">
                             <span style="background: var(--color-bg-alt); padding: 0.2rem 0.5rem; border-radius: var(--radius-sm); font-size: 0.8rem; color: var(--color-primary);">Grades 9-12</span>
                             <span style="background: var(--color-bg-alt); padding: 0.2rem 0.5rem; border-radius: var(--radius-sm); font-size: 0.8rem; color: var(--color-primary);">Arts & IB Program</span>
                         </div>
@@ -103,11 +108,11 @@
                 </div>
                 <!-- School Card 3 -->
                 <div class="card">
-                    <img src="assets/images/east-campus.png" alt="East Campus" style="height: 250px; object-fit: cover; width: 100%;">
-                    <div style="padding: 1.5rem;">
+                    <img src="assets/images/east-campus.png" alt="East Campus" class="school-card-img">
+                    <div class="school-card-body">
                         <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">East Prep Elementary</h3>
-                        <p class="text-muted"><i data-lucide="map-pin" style="width: 16px; display: inline-block;"></i> East Side</p>
-                        <div style="display: flex; gap: 0.5rem; margin: 1rem 0;">
+                        <p class="school-location"><i data-lucide="map-pin" style="width: 16px;"></i> East Side</p>
+                        <div class="school-card-badges">
                             <span style="background: var(--color-bg-alt); padding: 0.2rem 0.5rem; border-radius: var(--radius-sm); font-size: 0.8rem; color: var(--color-primary);">Grades K-5</span>
                             <span style="background: var(--color-bg-alt); padding: 0.2rem 0.5rem; border-radius: var(--radius-sm); font-size: 0.8rem; color: var(--color-primary);">Dual Language</span>
                         </div>
@@ -116,11 +121,11 @@
                 </div>
                 <!-- School Card 4 -->
                 <div class="card">
-                    <img src="assets/images/south-campus.png" alt="South Campus" style="height: 250px; object-fit: cover; width: 100%;">
-                    <div style="padding: 1.5rem;">
+                    <img src="assets/images/south-campus.png" alt="South Campus" class="school-card-img">
+                    <div class="school-card-body">
                         <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">South Innovation Academy</h3>
-                        <p class="text-muted"><i data-lucide="map-pin" style="width: 16px; display: inline-block;"></i> South Valley</p>
-                        <div style="display: flex; gap: 0.5rem; margin: 1rem 0;">
+                        <p class="school-location"><i data-lucide="map-pin" style="width: 16px;"></i> South Valley</p>
+                        <div class="school-card-badges">
                             <span style="background: var(--color-bg-alt); padding: 0.2rem 0.5rem; border-radius: var(--radius-sm); font-size: 0.8rem; color: var(--color-primary);">Grades 6-12</span>
                             <span style="background: var(--color-bg-alt); padding: 0.2rem 0.5rem; border-radius: var(--radius-sm); font-size: 0.8rem; color: var(--color-primary);">Technology Hub</span>
                         </div>
@@ -132,13 +137,13 @@
     </section>
 
     <!-- SECTION 4: CTA / Contact -->
-    <section class="section-padding bg-alt">
-        <div class="container text-center">
-            <h2 class="section-title">Not Sure Which Campus Fits Best?</h2>
-            <p style="max-width: 600px; margin: 1rem auto 2rem;">Our admissions counselors are here to help you navigate our options and find the perfect match for your child.</p>
+    <section class="section-padding" style="background: var(--color-primary); color: #fff; text-align: center;">
+        <div class="container">
+            <h2 class="section-title" style="color: var(--color-text-on-primary);">Not Sure Which Campus Fits Best?</h2>
+            <p style="max-width: 600px; margin: 1rem auto 2rem; color: rgba(255,255,255,0.8);">Our admissions counselors are here to help you navigate our options and find the perfect match for your child.</p>
             <div style="display: flex; gap: 1rem; justify-content: center;">
                 <a href="contact.html" class="btn btn-primary">Contact Admissions</a>
-                <a href="admissions.html" class="btn btn-outline">Read Admission Guidelines</a>
+                <a href="admissions.html" class="btn btn-outline-white">Read Admission Guidelines</a>
             </div>
         </div>
     </section>
@@ -148,8 +153,9 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <a href="index.html" class="navbar-brand" style="color: var(--color-text-on-primary); margin-bottom: 1rem; filter: brightness(0) invert(1);">
-                        <i data-lucide="graduation-cap"></i> CharterHub
+                    <a href="index.html" class="navbar-brand" style="margin-bottom: 1rem;">
+                        <i data-lucide="graduation-cap"></i>
+                        <span>CharterHub</span>
                     </a>
                     <p style="color: rgba(255,255,255,0.7); margin-top: 1rem;">Inspiring minds, shaping the future. Our connected network of schools provides top-tier education.</p>
                                                             <div class="footer-social" style="display: flex; gap: 1rem; margin-top: 1.5rem;">

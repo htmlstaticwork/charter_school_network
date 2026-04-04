@@ -5,7 +5,9 @@
   /* Colors */
   --color-primary: #0f172a; /* Deep Navy */
   --color-primary-light: #1e293b;
+  --color-text-on-primary: #ffffff;
   --color-secondary: #d97706; /* Premium Gold/Amber (Accent 1) */
+  --color-secondary-rgb: 217, 119, 6;
   --color-secondary-hover: #b45309;
   
   --color-bg-main: #f8fafc;
@@ -167,6 +169,24 @@ body.dark-mode .status-pending { background-color: var(--color-status-pending-bg
   color: #fff;
 }
 
+.btn-outline-white {
+  background-color: transparent;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+}
+.btn-outline-white:hover {
+  background-color: #ffffff;
+  color: var(--color-primary) !important;
+}
+
+.nav-link:hover, .nav-link.active {
+  color: var(--color-secondary);
+}
+
+.nav-mobile-only {
+  display: none !important;
+}
+
 /* ==========================================================================
    Navbar
    ========================================================================== */
@@ -187,7 +207,7 @@ body.dark-mode .status-pending { background-color: var(--color-status-pending-bg
   font-family: var(--font-family-serif);
   font-size: 1.5rem;
   font-weight: 700;
-  color: var(--color-primary);
+  color: var(--color-secondary);
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -208,6 +228,9 @@ body.dark-mode .status-pending { background-color: var(--color-status-pending-bg
   font-weight: 500;
   color: var(--color-text-main);
   padding: 0.5rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
 }
 .nav-link:hover {
   color: var(--color-secondary);
@@ -422,6 +445,45 @@ body.dark-mode .status-pending { background-color: var(--color-status-pending-bg
   border-color: var(--color-secondary);
 }
 
+.schools-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.schools-grid .card {
+  flex: 0 1 380px;
+}
+
+.school-card-body {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.school-card-img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.school-card-badges {
+  display: flex;
+  gap: 0.5rem;
+  margin: 1rem 0;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.school-location {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+}
+
 /* Footer Social Icons */
 .footer-social {
   display: flex;
@@ -447,5 +509,6 @@ body.dark-mode .status-pending { background-color: var(--color-status-pending-bg
 }
 .social-link i, .social-link svg {
   width: 20px;
-  height: 20px; stroke-width: 2px;
+  height: 20px; 
+  stroke-width: 2.5px;
 }

@@ -51,6 +51,7 @@
             flex-shrink: 0;
         }
     </style>
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
 </head>
 <body>
 
@@ -75,14 +76,18 @@
                 <div class="nav-item"><a href="curriculum.html" class="nav-link">Curriculum</a></div>
                 <div class="nav-item"><a href="community.html" class="nav-link">Community</a></div>
                 <div class="nav-item"><a href="contact.html" class="nav-link">Contact</a></div>
+                <div class="nav-item nav-mobile-only"><a href="login.html" class="btn btn-outline" style="width: 100%;">Login</a></div>
+                <div class="nav-item nav-mobile-only"><a href="user-dashboard.html" class="btn btn-primary" style="width: 100%;">Dashboard</a></div>
             </nav>
 
             <div class="navbar-actions">
-                <button id="rtl-toggle" class="theme-toggle" aria-label="Toggle RTL"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></svg></button>
-                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg></button>
+                
+                
 
-                <a href="login.html" class="btn btn-outline">Sign In</a>
+                <a href="login.html" class="btn btn-outline">Login</a>
                 <a href="user-dashboard.html" class="btn btn-primary">Dashboard</a>
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg></button>
+                <button id="rtl-toggle" class="theme-toggle" aria-label="Toggle RTL"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></svg></button>
                 <button class="mobile-menu-toggle">
                     <i data-lucide="menu"></i>
                 </button>
@@ -166,27 +171,27 @@
     </section>
 
     <!-- SECTION 4: Outcomes / Results -->
-    <section class="section-padding bg-primary" style="color: #fff; text-align: center;">
+    <section class="section-padding bg-alt" style="text-align: center;">
         <div class="container">
             <div class="section-header">
-                <span class="section-subtitle" style="color: var(--color-secondary);">Results</span>
-                <h2 class="section-title" style="color: var(--color-text-on-primary);">Proven Outcomes</h2>
+                <span class="section-subtitle">Results</span>
+                <h2 class="section-title">Proven Outcomes</h2>
             </div>
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
                 <div>
                     <h3 style="font-size: 3rem; font-family: var(--font-family-serif); color: var(--color-secondary);">top 5%</h3>
-                    <p style="font-weight: 500;">In State Testing</p>
+                    <p style="font-weight: 600; color: var(--color-primary);">In State Testing</p>
                 </div>
                 <div>
                     <h3 style="font-size: 3rem; font-family: var(--font-family-serif); color: var(--color-secondary);">98%</h3>
-                    <p style="font-weight: 500;">Graduation Rate</p>
+                    <p style="font-weight: 600; color: var(--color-primary);">Graduation Rate</p>
                 </div>
                 <div>
                     <h3 style="font-size: 3rem; font-family: var(--font-family-serif); color: var(--color-secondary);">100%</h3>
-                    <p style="font-weight: 500;">College Acceptance</p>
+                    <p style="font-weight: 600; color: var(--color-primary);">College Acceptance</p>
                 </div>
             </div>
-            <a href="admissions.html" class="btn btn-primary" style="font-size: 1.1rem; padding: 1rem 2rem;">Apply To Join Our Network</a>
+            <a href="admissions.html" class="btn btn-primary" style="font-size: 1.1rem; padding: 1rem 2.5rem;">Apply To Join Our Network</a>
         </div>
     </section>
 
@@ -195,8 +200,9 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <a href="index.html" class="navbar-brand" style="color: var(--color-text-on-primary); margin-bottom: 1rem; filter: brightness(0) invert(1);">
-                        <i data-lucide="graduation-cap"></i> CharterHub
+                    <a href="index.html" class="navbar-brand" style="margin-bottom: 1rem;">
+                        <i data-lucide="graduation-cap"></i>
+                        <span>CharterHub</span>
                     </a>
                     <p style="color: rgba(255,255,255,0.7); margin-top: 1rem;">Inspiring minds, shaping the future. Our connected network of schools provides top-tier education.</p>
                                                             <div class="footer-social" style="display: flex; gap: 1rem; margin-top: 1.5rem;">

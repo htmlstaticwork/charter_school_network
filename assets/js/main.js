@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const dropdownToggles = document.querySelectorAll('.nav-item.dropdown .nav-link');
     dropdownToggles.forEach(toggle => {
         toggle.addEventListener('click', (e) => {
-            if(window.innerWidth <= 992) {
+            if(window.innerWidth <= 1024) {
                 e.preventDefault();
                 toggle.parentElement.classList.toggle('open');
             }

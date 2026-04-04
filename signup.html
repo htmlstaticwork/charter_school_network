@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up | Charter School Network</title>
+    <title>Sign Up | CharterHub</title>
     <!-- CSS Assets -->
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/dark-mode.css">
@@ -16,7 +16,7 @@
         }
         .auth-image {
             flex: 1;
-            background: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.9)), url('https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=1920&q=80') center/cover;
+            background: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.9)), url('assets/images/classroom-community.png') center/cover;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -99,20 +99,17 @@
 
     <div class="auth-container">
         <!-- Visual Side -->
-        <div class="auth-image">
-            <div style="max-width: 500px; text-align: center;">
-                <h1 style="font-family: var(--font-family-serif); font-size: 3rem; margin-bottom: 1rem; color: #fff;">Join the Network</h1>
-                <p style="font-size: 1.25rem; color: rgba(255,255,255,0.8);">Create a parent portal account to track applications, communicate with teachers, and stay up to date with events.</p>
-            </div>
-        </div>
-
-        <!-- Form Side -->
-        <div class="auth-form-wrapper">
+                <!-- Form Side -->
+        <div class="auth-form-wrapper" style="width: 100%; max-width: 550px; background: var(--color-bg-surface); padding: 3.5rem; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); margin: 3rem auto; flex: none;">
             <div class="auth-form-inner">
-                <a href="index.html" class="navbar-brand" style="margin-bottom: 2rem; justify-content: flex-start;">
-                    <i data-lucide="graduation-cap"></i> CharterNet
-                </a>
-                <h2 style="font-size: 1.75rem; margin-bottom: 0.5rem;">Create Account</h2>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+                    <a href="index.html" class="navbar-brand" style="margin-bottom: 0;">
+                        <i data-lucide="graduation-cap"></i> CharterHub
+                    </a>
+                                                    </div>
+                                <button id="rtl-toggle" class="theme-toggle" aria-label="Toggle RTL"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></svg></button>
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg></button>
+                </div>
                 <p class="text-muted" style="margin-bottom: 2rem;">Setup your parent profile to get started.</p>
 
                 <div style="display: flex; gap: 1rem; margin-bottom: 1rem;">
@@ -159,9 +156,25 @@
     </div>
 
     <!-- JS Assets -->
+    <script src="assets/js/main.js"></script>
     <script src="assets/js/auth.js"></script>
     <script>
         lucide.createIcons();
     </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -12,10 +12,18 @@ body.dark-mode {
   
   --color-border: #334155; /* Slate 700 */
   
-  /* Primary shifts heavily in dark mode for contrast if needed, but secondary acts as main pop */
-  --color-primary: #f8fafc;
-  --color-primary-light: #e2e8f0;
-}
+  /* Primary shifts to a darker shade to maintain contrast with white text in dark mode */
+  --color-primary: #3b82f6; /* Blue 500 */
+  --color-primary-light: #60a5fa; /* Blue 400 */
+  --color-text-on-primary: #ffffff;
+  
+  /* Status Accent Backgrounds for Dark Mode */
+  --color-status-pending-bg: #451a03; /* Dark Amber */
+  --color-status-pending-text: #fbbf24; /* Amber 400 */
+  --color-status-info-bg: #082f49; /* Dark Blue/Cyan */
+  --color-status-info-text: #38bdf8; /* Sky 400 */
+ }
+
 
 body.dark-mode .btn-secondary {
   background-color: var(--color-bg-alt);

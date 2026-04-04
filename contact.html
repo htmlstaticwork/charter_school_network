@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us | Charter School Network</title>
+    <title>Contact Us | CharterHub</title>
     <!-- CSS Assets -->
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
@@ -78,7 +78,7 @@
         <div class="container">
             <a href="index.html" class="navbar-brand">
                 <i data-lucide="graduation-cap"></i>
-                <span>CharterNet</span>
+                <span>CharterHub</span>
             </a>
             
             <nav class="navbar-nav">
@@ -93,10 +93,13 @@
                 <div class="nav-item"><a href="admissions.html" class="nav-link">Admissions</a></div>
                 <div class="nav-item"><a href="curriculum.html" class="nav-link">Curriculum</a></div>
                 <div class="nav-item"><a href="community.html" class="nav-link">Community</a></div>
-                <div class="nav-item"><a href="contact.html" class="nav-link active" style="color: var(--color-secondary);">Contact</a></div>
+                <div class="nav-item"><a href="contact.html" class="nav-link">Contact</a></div>
             </nav>
 
             <div class="navbar-actions">
+                <button id="rtl-toggle" class="theme-toggle" aria-label="Toggle RTL"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></svg></button>
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg></button>
+
                 <a href="login.html" class="btn btn-outline">Sign In</a>
                 <a href="user-dashboard.html" class="btn btn-primary">Dashboard</a>
                 <button class="mobile-menu-toggle">
@@ -109,7 +112,7 @@
     <!-- SECTION 1: Contact Info -->
     <section class="page-hero">
         <div class="container">
-            <h1 class="section-title" style="color: #fff;">Get In Touch</h1>
+            <h1 class="section-title" style="color: var(--color-text-on-primary);">Get In Touch</h1>
             <p style="color: rgba(255,255,255,0.8); max-width: 600px; margin: 1rem auto 0; font-size: 1.1rem;">Have questions about admissions or our curriculum? Our administrative team is here to help you.</p>
         </div>
     </section>
@@ -133,7 +136,7 @@
                         <div class="contact-icon" style="margin: 0;"><i data-lucide="mail"></i></div>
                         <div>
                             <h4 style="font-size: 1.1rem; margin-bottom: 0.2rem;">Email Us</h4>
-                            <p class="text-muted">info@charternet.edu</p>
+                            <p class="text-muted">info@CharterHub.edu</p>
                         </div>
                     </div>
                     <div class="contact-box" style="text-align: left; display: flex; gap: 1.5rem; align-items: center; padding: 1.5rem;">
@@ -204,9 +207,9 @@
     </section>
 
     <!-- SECTION 4: CTA / Support -->
-    <section class="section-padding bg-primary" style="text-align: center; color: #fff;">
+    <section class="section-padding bg-primary" style="text-align: center;">
         <div class="container">
-            <h2 class="section-title" style="color: #fff; margin-bottom: 1.5rem;">Current Parent Needing Support?</h2>
+            <h2 class="section-title" style="color: var(--color-text-on-primary); margin-bottom: 1.5rem;">Current Parent Needing Support?</h2>
             <p style="max-width: 600px; margin: 0 auto 2rem; color: rgba(255,255,255,0.8); font-size: 1.1rem;">If you are an existing parent looking for support with the parent portal, student applications, or billing, please log in to your dashboard to submit a ticket.</p>
             <a href="login.html" class="btn btn-primary" style="font-size: 1.1rem; padding: 1rem 2.5rem;">Login to Portal Hub</a>
         </div>
@@ -217,11 +220,21 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <a href="index.html" class="navbar-brand" style="color: #fff; margin-bottom: 1rem; filter: brightness(0) invert(1);">
-                        <i data-lucide="graduation-cap"></i> CharterNet
+                    <a href="index.html" class="navbar-brand" style="color: var(--color-text-on-primary); margin-bottom: 1rem; filter: brightness(0) invert(1);">
+                        <i data-lucide="graduation-cap"></i> CharterHub
                     </a>
                     <p style="color: rgba(255,255,255,0.7); margin-top: 1rem;">Inspiring minds, shaping the future. Our connected network of schools provides top-tier education.</p>
-                </div>
+                                                            <div class="footer-social" style="display: flex; gap: 1rem; margin-top: 1.5rem;">
+                        <a href="#" class="social-link" aria-label="Facebook" style="display: flex; align-items: center; justify-content: center; width: 38px; height: 38px; background: rgba(255,255,255,0.1); color: #fff; border-radius: 50%; transition: all 0.3s ease; border: 1px solid rgba(255,255,255,0.2);">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram" style="display: flex; align-items: center; justify-content: center; width: 38px; height: 38px; background: rgba(255,255,255,0.1); color: #fff; border-radius: 50%; transition: all 0.3s ease; border: 1px solid rgba(255,255,255,0.2);">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="X (Twitter)" style="display: flex; align-items: center; justify-content: center; width: 38px; height: 38px; background: rgba(255,255,255,0.1); color: #fff; border-radius: 50%; transition: all 0.3s ease; border: 1px solid rgba(255,255,255,0.2);">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg>
+                        </a>
+                    </div>                </div>
                 <div class="footer-col">
                     <h4>Quick Links</h4>
                     <ul>
@@ -243,13 +256,13 @@
                     <h4>Contact</h4>
                     <ul style="color: rgba(255,255,255,0.7);">
                         <li>1-800-CHARTER</li>
-                        <li>info@charternet.edu</li>
+                        <li>info@CharterHub.edu</li>
                         <li>123 Education Blvd, NY</li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                &copy; 2026 Charter School Network. All rights reserved.
+                &copy; 2026 CharterHub. All rights reserved.
             </div>
         </div>
     </footer>
@@ -258,3 +271,17 @@
     <script src="assets/js/main.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

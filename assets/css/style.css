@@ -106,7 +106,15 @@ button, input, textarea, select {
 
 .bg-surface { background-color: var(--color-bg-surface); }
 .bg-alt { background-color: var(--color-bg-alt); }
-.bg-primary { background-color: var(--color-primary); color: #fff; }
+.bg-primary { background-color: var(--color-primary); color: var(--color-text-on-primary); }
+
+/* Status Accents */
+.status-info { background-color: #e0f2fe; color: #0284c7; }
+.status-pending { background-color: #fef3c7; color: #d97706; }
+
+body.dark-mode .status-info { background-color: var(--color-status-info-bg); color: var(--color-status-info-text); }
+body.dark-mode .status-pending { background-color: var(--color-status-pending-bg); color: var(--color-status-pending-text); }
+
 
 .section-padding {
   padding: var(--spacing-lg) 0;
@@ -239,13 +247,83 @@ button, input, textarea, select {
   align-items: center;
   gap: 1rem;
 }
+.navbar-actions .btn, .dashboard-header .btn {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+}
+
+/* School Cards in Index */
+.school-card-img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+.schools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+}
+.school-card-body {
+  padding: 1.5rem;
+}
+
+/* Testimonials Grid */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+.testimonial-card {
+  background: var(--color-bg-surface);
+  padding: 2.5rem;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  text-align: center;
+  border: 1px solid var(--color-border);
+}
+.testimonial-author {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+
 .mobile-menu-toggle {
+
   display: none;
   background: none;
   border: none;
   font-size: 1.5rem;
   color: var(--color-text-heading);
   cursor: pointer;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+  background: transparent;
+  border: 1px solid var(--color-border);
+  color: var(--color-text-heading);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+}
+
+.theme-toggle:hover {
+  background-color: var(--color-bg-alt);
+  color: var(--color-secondary);
+  border-color: var(--color-secondary);
+  transform: translateY(-2px);
+}
+
+.theme-toggle i {
+  width: 20px;
+  height: 20px; stroke-width: 2px;
 }
 
 /* ==========================================================================
@@ -313,4 +391,61 @@ button, input, textarea, select {
 .section-title {
   font-family: var(--font-family-serif);
   font-size: 2.5rem;
+}
+
+/* Schools Page Styles */
+.page-hero {
+  background: var(--color-primary);
+  color: var(--color-text-on-primary);
+  padding: 4rem 0 3rem;
+  text-align: center;
+}
+.filter-bar {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+.filter-btn {
+  padding: 0.5rem 1.5rem;
+  border-radius: 2rem;
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-surface);
+  color: var(--color-text-main);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+.filter-btn.active, .filter-btn:hover {
+  background: var(--color-secondary);
+  color: #fff;
+  border-color: var(--color-secondary);
+}
+
+/* Footer Social Icons */
+.footer-social {
+  display: flex;
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border-radius: 50%;
+  transition: all var(--transition-fast);
+  text-decoration: none;
+}
+.social-link:hover {
+  background: var(--color-secondary);
+  transform: translateY(-3px);
+  color: #fff;
+}
+.social-link i, .social-link svg {
+  width: 20px;
+  height: 20px; stroke-width: 2px;
 }

@@ -37,6 +37,4 @@ body.rtl .dashboard-sidebar {
   border-left: 1px solid var(--color-border);
 }
 
-body.rtl .nav-link {
-  /* adjust icon margins if any */
-}
+

@@ -110,6 +110,26 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    // Navigation Active State Highlighting
+    const currentPage = window.location.pathname.split("/").pop() || 'index.html';
+    const navLinks = document.querySelectorAll('.nav-link, .dropdown-item');
+    
+    navLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href === currentPage) {
+            link.classList.add('active');
+            
+            // If it's a dropdown item, highlight its parent nav-link
+            const dropdownParent = link.closest('.dropdown');
+            if (dropdownParent) {
+                const parentNavLink = dropdownParent.querySelector('.nav-link');
+                if (parentNavLink) {
+                    parentNavLink.classList.add('active');
+                }
+            }
+        }
+    });
 });
 
 

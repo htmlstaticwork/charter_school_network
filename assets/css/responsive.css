@@ -65,6 +65,10 @@
   .navbar-nav.active .nav-item.dropdown.open .dropdown-menu {
     display: block;
   }
+
+  .testimonials-grid {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 /* Mobile View */
@@ -100,10 +104,21 @@
     position: static;
     height: auto;
     border-right: none;
-    border-bottom: 1px solid var(--color-border);
   }
 }
 
+
+@media (max-width: 576px) {
+  /* Testimonials stacked only on mobile */
+  .testimonial-author {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+}
 @media (max-width: 480px) {
   .grid-4 {
     grid-template-columns: 1fr !important;

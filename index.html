@@ -49,10 +49,15 @@
             width: 100%;
         }
         .steps-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
             gap: 2rem;
             text-align: center;
+        }
+        .steps-grid > div {
+            flex: 1 1 250px;
+            max-width: 350px; /* Allow items to stretch slightly but not overly wide */
         }
         .step-icon {
             width: 60px;

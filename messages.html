@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="assets/css/responsive.css">
     <link rel="stylesheet" href="assets/css/dark-mode.css">
     <link rel="stylesheet" href="assets/css/rtl.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         body { background: var(--color-bg-alt); }
@@ -65,6 +65,10 @@
             .dashboard-sidebar { left: -100%; position: fixed; box-shadow: 10px 0 30px rgba(0,0,0,0.3); }
             .dashboard-sidebar.open { left: 0; }
             .chat-sidebar { display: none; }
+            .chat-messages { padding: 1rem; }
+            .chat-header { padding: 1rem; }
+            .chat-input-area { padding: 1rem; }
+            .message { max-width: 85%; }
         }
     </style>
     <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
@@ -234,7 +238,22 @@
     <script src="assets/js/dashboard.js"></script>
     <script>
         lucide.createIcons();
-
+        
+        // Custom scroll handler for dashboard internal scrolling
+        const chatContainer = document.querySelector('.chat-messages');
+        const bttBtn = document.getElementById('back-to-top');
+        if(chatContainer && bttBtn) {
+            chatContainer.addEventListener('scroll', () => {
+                if(chatContainer.scrollTop > 300) {
+                    bttBtn.classList.add('show');
+                } else {
+                    bttBtn.classList.remove('show');
+                }
+            });
+            bttBtn.addEventListener('click', () => {
+                chatContainer.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
     </script>
 </body>
 </html>

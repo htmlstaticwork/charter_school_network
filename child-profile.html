@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="assets/css/responsive.css">
     <link rel="stylesheet" href="assets/css/dark-mode.css">
     <link rel="stylesheet" href="assets/css/rtl.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         /* Shared Dashboard CSS via Dashboard.html */
@@ -52,7 +52,7 @@
         .user-avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--color-primary); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 600; }
         
         .profile-header {
-            display: flex; align-items: center; gap: 2rem;
+            display: flex; align-items: center; gap: 2rem; flex-wrap: wrap;
             background: var(--color-bg-surface); padding: 2rem; border-radius: var(--radius-lg);
             box-shadow: var(--shadow-sm); margin-bottom: 2rem;
         }
@@ -167,24 +167,24 @@
                     <div style="background: var(--color-bg-surface); padding: 2rem; border-radius: var(--radius-lg); box-shadow: var(--shadow-sm);">
                         <h4 style="margin-bottom: 1.5rem; font-size: 1.1rem; border-bottom: 1px solid var(--color-border); padding-bottom: 1rem;">Personal Information</h4>
                         
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;">
                             <div class="form-group">
                                 <label class="form-label">First Name</label>
-                                <input type="text" class="form-input" disabled>
+                                <input type="text" class="form-input">
                             </div>
                             <div class="form-group">
                                 <label class="form-label">Last Name</label>
-                                <input type="text" class="form-input" disabled>
+                                <input type="text" class="form-input">
                             </div>
                         </div>
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;">
                             <div class="form-group">
                                 <label class="form-label">Date of Birth</label>
-                                <input type="date" class="form-input" disabled>
+                                <input type="date" class="form-input">
                             </div>
                             <div class="form-group">
                                 <label class="form-label">Assigned Campus</label>
-                                <input type="text" class="form-input" disabled>
+                                <input type="text" class="form-input">
                             </div>
                         </div>
                         

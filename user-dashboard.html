@@ -144,6 +144,9 @@
             font-weight: 600;
         }
         
+        .dashboard-updates-grid { grid-template-columns: 2fr 1fr; }
+        
+
                 @media (max-width: 900px) { 
             #sidebar-toggle { display: block; margin-right: 1rem; }
             .dashboard-sidebar { 
@@ -257,7 +260,7 @@
                 </div>
 
                 <!-- Recent Updates Grid -->
-                <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 1.5rem;">
+                <div class="dashboard-updates-grid" style="display: grid; gap: 1.5rem;">
                     <!-- Left Col -->
                     <div style="display: flex; flex-direction: column; gap: 1.5rem;">
                         <div style="background: var(--color-bg-surface); padding: 1.5rem; border-radius: var(--radius-lg); box-shadow: var(--shadow-sm);">
@@ -311,22 +314,7 @@
     <script src="assets/js/dashboard.js"></script>
     <script>
         lucide.createIcons();
-        
-        // Inline mobile menu logic for sidebar
-        const sidebarToggle = document.getElementById('sidebar-toggle');
-        const sidebarClose = document.getElementById('sidebar-close');
-        const sidebar = document.querySelector('.dashboard-sidebar');
-        
-        if(sidebarToggle) {
-            sidebarToggle.addEventListener('click', () => {
-                sidebar.classList.add('open');
-            });
-        }
-        if(sidebarClose) {
-            sidebarClose.addEventListener('click', () => {
-                sidebar.classList.remove('open');
-            });
-        }
+
     </script>
 </body>
 </html>

@@ -19,6 +19,8 @@
             text-align: center;
         }
         .program-card {
+            flex: 1 1 300px;
+            max-width: 450px;
             background: var(--color-bg-surface);
             border-radius: var(--radius-lg);
             overflow: hidden;
@@ -110,7 +112,7 @@
                 <span class="section-subtitle">Core Programs</span>
                 <h2 class="section-title">What We Teach</h2>
             </div>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem;">
                 <div class="program-card">
                     <img src="assets/images/stem-curriculum.png" alt="STEM" class="program-img">
                     <div class="program-body">
@@ -138,7 +140,7 @@
 
     <!-- SECTION 3: Teaching Method -->
     <section class="section-padding bg-surface">
-        <div class="container grid-2" style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: flex-start;">
+        <div class="container grid-2 curriculum-method-grid" style="display: grid; gap: 4rem; align-items: flex-start;">
             <div>
                 <span class="section-subtitle">Pedagogy</span>
                 <h2 class="section-title" style="margin-bottom: 2rem;">How We Teach</h2>

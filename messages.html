@@ -27,7 +27,7 @@
         .nav-link-danger { color: #ef4444 !important; display: flex; align-items: center; gap: 1rem; padding: 0.8rem 1.5rem; font-weight: 500; transition: all var(--transition-fast); }
         .nav-link-danger:hover { background: #fee2e2; color: #dc2626 !important; border-right: 3px solid #dc2626; }
         
-        .dashboard-main { flex: 1; display: flex; flex-direction: column; overflow-x: hidden; height: 100vh; }
+        .dashboard-main { flex: 1; display: flex; flex-direction: column; height: 100vh; }
         .dashboard-header { background: var(--color-bg-surface); padding: 1rem 2rem; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--color-border); flex-shrink: 0; }
         .dashboard-content { flex: 1; display: flex; overflow: hidden; padding: 0; }
         
@@ -38,8 +38,11 @@
         .chat-item:hover { background: var(--color-bg-alt); }
         .chat-item.active { background: rgba(217, 119, 6, 0.05); border-left: 3px solid var(--color-secondary); }
         .avatar-container { position: relative; flex-shrink: 0; }
-        .avatar { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; }
+        .avatar { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; transition: all var(--transition-fast); }
+        .chat-item:hover .avatar, .chat-item.active .avatar { background: var(--color-primary) !important; color: #fff !important; }
         .status-dot { position: absolute; bottom: 2px; right: 2px; width: 12px; height: 12px; border-radius: 50%; border: 2px solid var(--color-bg-surface); background: #22c55e; }
+        .chat-action-btn { background: none; border: none; cursor: pointer; color: var(--color-text-muted); transition: color var(--transition-fast); }
+        .chat-action-btn:hover { color: var(--color-secondary); }
         
         .chat-window { flex: 1; display: flex; flex-direction: column; background: var(--color-bg-surface); }
         .chat-header { padding: 1rem 2rem; border-bottom: 1px solid var(--color-border); display: flex; align-items: center; justify-content: space-between; background: var(--color-bg-surface); }
@@ -126,8 +129,8 @@
                 <div class="chat-sidebar">
                     <div style="padding: 1.5rem; border-bottom: 1px solid var(--color-border);">
                         <div style="position: relative;">
-                            <input type="text" placeholder="Search contacts..." style="width: 100%; padding: 0.6rem 1rem 0.6rem 2.5rem; border: 1px solid var(--color-border); border-radius: var(--radius-md); font-size: 0.9rem;">
-                            <i data-lucide="search" style="position: absolute; left: 0.75rem; top: 50%; transform: translateY(-50%); width: 16px; color: var(--color-text-muted);"></i>
+                            <i data-lucide="search" style="position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); width: 16px; color: var(--color-text-muted);"></i>
+                            <input type="text" placeholder="Search contacts..." style="width: 100%; padding: 0.6rem 2.5rem; border: 1px solid var(--color-border); border-radius: var(--radius-md); font-size: 0.9rem; text-align: center; background: transparent; color: var(--color-text-main);">
                         </div>
                     </div>
                     
@@ -185,9 +188,9 @@
                             </div>
                         </div>
                         <div style="display: flex; gap: 1.5rem;">
-                            <button style="background: none; border: none; cursor: pointer; color: var(--color-text-muted);"><i data-lucide="phone"></i></button>
-                            <button style="background: none; border: none; cursor: pointer; color: var(--color-text-muted);"><i data-lucide="video"></i></button>
-                            <button style="background: none; border: none; cursor: pointer; color: var(--color-text-muted);"><i data-lucide="more-vertical"></i></button>
+                            <button class="chat-action-btn"><i data-lucide="phone"></i></button>
+                            <button class="chat-action-btn"><i data-lucide="video"></i></button>
+                            <button class="chat-action-btn"><i data-lucide="more-vertical"></i></button>
                         </div>
                     </div>
 
@@ -213,7 +216,7 @@
                     </div>
 
                     <div class="chat-input-area">
-                        <button style="background: none; border: none; cursor: pointer; color: var(--color-text-muted);"><i data-lucide="paperclip"></i></button>
+                        <button class="chat-action-btn"><i data-lucide="paperclip"></i></button>
                         <input type="text" class="chat-input" placeholder="Type your message...">
                         <button class="btn btn-primary" style="padding: 0.6rem 1.25rem; border-radius: 2rem;"><i data-lucide="send" style="width: 18px;"></i></button>
                     </div>
@@ -231,11 +234,7 @@
     <script src="assets/js/dashboard.js"></script>
     <script>
         lucide.createIcons();
-        const sidebarToggle = document.getElementById('sidebar-toggle');
-        const sidebarClose = document.getElementById('sidebar-close');
-        const sidebar = document.querySelector('.dashboard-sidebar');
-        if(sidebarToggle) sidebarToggle.addEventListener('click', () => sidebar.classList.add('open'));
-        if(sidebarClose) sidebarClose.addEventListener('click', () => sidebar.classList.remove('open'));
+
     </script>
 </body>
 </html>

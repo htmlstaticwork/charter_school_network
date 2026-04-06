@@ -35,7 +35,7 @@
         }
         .nav-link-danger i { width: 20px; }
 
-        .dashboard-main { flex: 1; display: flex; flex-direction: column; overflow-x: hidden; }
+        .dashboard-main { flex: 1; display: flex; flex-direction: column; }
         .dashboard-header { background: var(--color-bg-surface); padding: 1rem 2rem; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--color-border); position: sticky; top: 0; z-index: 40; }
         .dashboard-content { padding: 2rem; max-width: 1200px; width: 100%; margin: 0 auto; }
         .user-profile-btn { display: flex; align-items: center; gap: 0.75rem; cursor: pointer; }
@@ -207,11 +207,7 @@
     <script src="assets/js/dashboard.js"></script>
     <script>
         lucide.createIcons();
-        const sidebarToggle = document.getElementById('sidebar-toggle');
-        const sidebarClose = document.getElementById('sidebar-close');
-        const sidebar = document.querySelector('.dashboard-sidebar');
-        if(sidebarToggle) sidebarToggle.addEventListener('click', () => sidebar.classList.add('open'));
-        if(sidebarClose) sidebarClose.addEventListener('click', () => sidebar.classList.remove('open'));
+
     </script>
 </body>
 </html>

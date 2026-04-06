@@ -10,6 +10,8 @@
   --color-secondary-rgb: 217, 119, 6;
   --color-secondary-hover: #b45309;
   
+  --color-cta-bg: #3b82f6; /* Bright blue for CTA backgrounds */
+  
   --color-bg-main: #f8fafc;
   --color-bg-surface: #ffffff;
   --color-bg-alt: #f1f5f9;
@@ -108,7 +110,7 @@ button, input, textarea, select {
 
 .bg-surface { background-color: var(--color-bg-surface); }
 .bg-alt { background-color: var(--color-bg-alt); }
-.bg-primary { background-color: var(--color-primary); color: var(--color-text-on-primary); }
+.bg-primary { background-color: var(--color-cta-bg); color: var(--color-text-on-primary); }
 
 /* Status Accents */
 .status-info { background-color: #e0f2fe; color: #0284c7; }

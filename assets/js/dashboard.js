@@ -12,11 +12,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Mobile sidebar toggle
     const sidebarToggle = document.getElementById('sidebar-toggle');
+    const sidebarClose = document.getElementById('sidebar-close');
     const sidebar = document.querySelector('.dashboard-sidebar');
     
     if (sidebarToggle && sidebar) {
         sidebarToggle.addEventListener('click', () => {
-            sidebar.classList.toggle('open');
+            sidebar.classList.add('open');
+        });
+    }
+    
+    if (sidebarClose && sidebar) {
+        sidebarClose.addEventListener('click', () => {
+            sidebar.classList.remove('open');
         });
     }
 });

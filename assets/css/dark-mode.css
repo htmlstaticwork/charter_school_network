@@ -3,8 +3,8 @@
    ========================================================================== */
 body.dark-mode {
   --color-bg-main: #020617; /* Slate 950 */
-  --color-bg-surface: #0f172a; /* Slate 900 */
-  --color-bg-alt: #1e293b; /* Slate 800 */
+  --color-bg-surface: #1e293b; /* Slate 800 (Cards, Elevated) */
+  --color-bg-alt: #0f172a; /* Slate 900 (Alternate Sections) */
   
   --color-text-main: #cbd5e1; /* Slate 300 */
   --color-text-muted: #94a3b8; /* Slate 400 */
@@ -16,6 +16,8 @@ body.dark-mode {
   --color-primary: #3b82f6; /* Blue 500 */
   --color-primary-light: #60a5fa; /* Blue 400 */
   --color-text-on-primary: #ffffff;
+  
+  --color-cta-bg: #0f172a; /* Navy for CTA blocks in dark mode */
   
   /* Status Accent Backgrounds for Dark Mode */
   --color-status-pending-bg: #451a03; /* Dark Amber */

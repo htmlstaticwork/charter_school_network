@@ -33,23 +33,20 @@
             margin-top: 2rem;
         }
         .about-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
             gap: 2rem;
             margin-top: 2rem;
         }
-        .schools-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
+        .about-cards > .card {
+            flex: 1 1 300px;
+            max-width: 400px;
         }
         .school-card-img {
             height: 200px;
             object-fit: cover;
             width: 100%;
-        }
-        .school-card-body {
-            padding: 1.5rem;
         }
         .steps-grid {
             display: grid;
@@ -136,17 +133,17 @@
             </div>
             <div class="about-cards">
                 <div class="card p-4 text-center" style="padding: 2rem;">
-                    <i data-lucide="book-open" class="text-secondary" style="width: 48px; height: 48px; margin-bottom: 1rem;"></i>
+                    <i data-lucide="book-open" class="text-secondary" style="width: 48px; height: 48px; margin: 0 auto 1rem; display: block;"></i>
                     <h3>Rigorous Academics</h3>
                     <p class="text-muted" style="margin-top: 1rem;">Our curriculum is designed to challenge students and foster a lifelong love of learning.</p>
                 </div>
                 <div class="card p-4 text-center" style="padding: 2rem;">
-                    <i data-lucide="users" class="text-secondary" style="width: 48px; height: 48px; margin-bottom: 1rem;"></i>
+                    <i data-lucide="users" class="text-secondary" style="width: 48px; height: 48px; margin: 0 auto 1rem; display: block;"></i>
                     <h3>Community Focus</h3>
                     <p class="text-muted" style="margin-top: 1rem;">We build strong partnerships with parents and local organizations to support student success.</p>
                 </div>
                 <div class="card p-4 text-center" style="padding: 2rem;">
-                    <i data-lucide="award" class="text-secondary" style="width: 48px; height: 48px; margin-bottom: 1rem;"></i>
+                    <i data-lucide="award" class="text-secondary" style="width: 48px; height: 48px; margin: 0 auto 1rem; display: block;"></i>
                     <h3>Character Building</h3>
                     <p class="text-muted" style="margin-top: 1rem;">Education goes beyond academics; we focus on developing ethical and responsible leaders.</p>
                 </div>
@@ -282,7 +279,7 @@
     </section>
 
     <!-- SECTION 7: CTA -->
-    <section class="section-padding" style="background: var(--color-primary); color: #fff; text-align: center;">
+    <section class="section-padding" style="background: var(--color-cta-bg); color: #fff; text-align: center;">
         <div class="container">
             <h2 class="section-title" style="color: var(--color-text-on-primary); margin-bottom: 1.5rem;">Ready to Join Our Community?</h2>
             <p style="max-width: 600px; margin: 0 auto 2rem; color: rgba(255,255,255,0.8); font-size: 1.1rem;">Enrollment for the current academic year is now open. Start your journey with CharterHub today.</p>

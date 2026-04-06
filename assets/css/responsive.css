@@ -69,6 +69,48 @@
   .testimonials-grid {
     grid-template-columns: 1fr 1fr;
   }
+  
+  /* Fix tablet footer forced wrapping */
+  .footer-grid {
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  }
+  
+  /* Force Academic Stats to 2x2 strictly on tablet */
+  /* Force Academic Stats to 2x2 strictly on tablet */
+  .stats-grid {
+    grid-template-columns: 1fr 1fr !important;
+  }
+  
+  /* Stack Eligibility, Curriculum, and Community images and cards on tablet to grant maximum height without cropping */
+  .admissions-eligibility-grid,
+  .curriculum-method-grid,
+  .community-announcements-grid {
+    grid-template-columns: 1fr !important;
+  }
+  
+  /* Logically elevate curriculum and community images prior to textual content on stacked layouts */
+  .curriculum-method-grid > div:last-child,
+  .community-announcements-grid > div:last-child {
+    order: -1;
+  }
+  
+  /* Symmetrically align and restructure community announcement blocks for tablet */
+  .community-announcements-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .community-announcements-content > div {
+    border-left: none !important;
+    border-top: 3px solid var(--color-primary);
+    padding-left: 0 !important;
+    padding-top: 1rem;
+    max-width: 500px;
+  }
+  .community-announcements-content > div:nth-of-type(2) {
+     border-top-color: var(--color-border);
+  }
 }
 
 /* Mobile View */
@@ -91,6 +133,9 @@
     justify-content: center;
     flex-direction: column;
   }
+  .premium-hero .hero-actions {
+    padding-bottom: 4rem; /* Prevent overlap with negative margin USP section on mobile */
+  }
   .hero-actions .btn {
     width: 100%;
   }
@@ -99,11 +144,75 @@
   .dashboard-layout {
     flex-direction: column;
   }
+  .dashboard-updates-grid {
+    grid-template-columns: 1fr !important;
+  }
   .dashboard-sidebar {
     width: 100%;
     position: static;
     height: auto;
     border-right: none;
+  }
+  
+  /* Universal Dashboard Header Mobile Fixes */
+  .dashboard-header {
+    padding: 0.75rem 1rem !important; /* Reduce padding to free up horizontal space */
+  }
+  .dashboard-header > div {
+    gap: 0.5rem !important; /* Reduce gap between logical groups */
+  }
+  .dashboard-header h2 {
+    font-size: 1.1rem !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 130px; /* Prevent long names like "Welcome back, Sarah!" from line-wrapping */
+  }
+  .dashboard-header .text-muted {
+    display: none !important; /* Hide sub-text like "Here is what's happening" to save header height */
+  }
+
+  /* Footer Parallel Columns */
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .footer-col:first-child,
+  .footer-col:last-child {
+    grid-column: span 2;
+  }
+
+  /* CTA Buttons Single Line */
+  section[style*="--color-cta-bg"] > .container > div[style*="display: flex"] {
+    flex-wrap: nowrap !important;
+    gap: 0.5rem !important;
+  }
+  section[style*="--color-cta-bg"] > .container > div[style*="display: flex"] > .btn {
+    width: 50% !important;
+    padding: 0.8rem 0.2rem !important;
+    font-size: clamp(0.7rem, 3.5vw, 0.95rem) !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    white-space: nowrap;
+  }
+  
+  /* Strictly format filter buttons to 2x2 matrix on mobile */
+  .filter-bar {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+  }
+  .filter-bar .filter-btn {
+    width: 100%;
+    margin: 0;
+    padding: 0.5rem 0.25rem;
+    font-size: clamp(0.7rem, 3.5vw, 0.9rem);
+    white-space: normal; /* text should wrap if too long instead of overflowing button bounds */
+    line-height: 1.2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 

@@ -32,17 +32,7 @@
         .dashboard-content { flex: 1; display: flex; overflow: hidden; padding: 0; }
         
         /* Messaging Layout */
-        .chat-sidebar { width: 320px; background: var(--color-bg-surface); border-right: 1px solid var(--color-border); display: flex; flex-direction: column; }
-        .chat-list { flex: 1; overflow-y: auto; }
-        .chat-item { padding: 1.25rem; display: flex; gap: 1rem; cursor: pointer; border-bottom: 1px solid var(--color-border); transition: background var(--transition-fast); }
-        .chat-item:hover { background: var(--color-bg-alt); }
-        .chat-item.active { background: rgba(217, 119, 6, 0.05); border-left: 3px solid var(--color-secondary); }
-        .avatar-container { position: relative; flex-shrink: 0; }
-        .avatar { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; transition: all var(--transition-fast); }
-        .chat-item:hover .avatar, .chat-item.active .avatar { background: var(--color-primary) !important; color: #fff !important; }
-        .status-dot { position: absolute; bottom: 2px; right: 2px; width: 12px; height: 12px; border-radius: 50%; border: 2px solid var(--color-bg-surface); background: #22c55e; }
-        .chat-action-btn { background: none; border: none; cursor: pointer; color: var(--color-text-muted); transition: color var(--transition-fast); }
-        .chat-action-btn:hover { color: var(--color-secondary); }
+
         
         .chat-window { flex: 1; display: flex; flex-direction: column; background: var(--color-bg-surface); }
         .chat-header { padding: 1rem 2rem; border-bottom: 1px solid var(--color-border); display: flex; align-items: center; justify-content: space-between; background: var(--color-bg-surface); }
@@ -64,12 +54,12 @@
             #sidebar-toggle { display: block; margin-right: 1rem; }
             .dashboard-sidebar { left: -100%; position: fixed; box-shadow: 10px 0 30px rgba(0,0,0,0.3); }
             .dashboard-sidebar.open { left: 0; }
-            .chat-sidebar { display: none; }
             .chat-messages { padding: 1rem; }
             .chat-header { padding: 1rem; }
             .chat-input-area { padding: 1rem; }
             .message { max-width: 85%; }
         }
+
     </style>
     <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
 </head>
@@ -129,57 +119,7 @@
             </header>
 
             <div class="dashboard-content">
-                <!-- Chat List Sidebar -->
-                <div class="chat-sidebar">
-                    <div style="padding: 1.5rem; border-bottom: 1px solid var(--color-border);">
-                        <div style="position: relative;">
-                            <i data-lucide="search" style="position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); width: 16px; color: var(--color-text-muted);"></i>
-                            <input type="text" placeholder="Search contacts..." style="width: 100%; padding: 0.6rem 2.5rem; border: 1px solid var(--color-border); border-radius: var(--radius-md); font-size: 0.9rem; text-align: center; background: transparent; color: var(--color-text-main);">
-                        </div>
-                    </div>
-                    
-                    <div class="chat-list">
-                        <div class="chat-item active">
-                            <div class="avatar-container">
-                                <div class="avatar" style="background: var(--color-bg-alt); display: flex; align-items: center; justify-content: center; font-weight: 600; color: var(--color-primary);">AO</div>
-                                <div class="status-dot"></div>
-                            </div>
-                            <div style="flex: 1;">
-                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.25rem;">
-                                    <h4 style="font-size: 0.95rem; font-weight: 600;">Admissions Office</h4>
-                                    <span class="message-time">10:45 AM</span>
-                                </div>
-                                <p class="text-muted" style="font-size: 0.85rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Your documents have been verified.</p>
-                            </div>
-                        </div>
-                        <div class="chat-item">
-                            <div class="avatar-container">
-                                <div class="avatar" style="background: var(--color-bg-alt); display: flex; align-items: center; justify-content: center; font-weight: 600; color: var(--color-primary);">PM</div>
-                                <div class="status-dot" style="background: #94a3b8;"></div>
-                            </div>
-                            <div style="flex: 1;">
-                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.25rem;">
-                                    <h4 style="font-size: 0.95rem; font-weight: 600;">Principal Miller</h4>
-                                    <span class="message-time">Yesterday</span>
-                                </div>
-                                <p class="text-muted" style="font-size: 0.85rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Looking forward to the Fall Festival!</p>
-                            </div>
-                        </div>
-                        <div class="chat-item">
-                            <div class="avatar-container">
-                                <div class="avatar" style="background: var(--color-bg-alt); display: flex; align-items: center; justify-content: center; font-weight: 600; color: var(--color-primary);">FD</div>
-                                <div class="status-dot"></div>
-                            </div>
-                            <div style="flex: 1;">
-                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.25rem;">
-                                    <h4 style="font-size: 0.95rem; font-weight: 600;">Finance Department</h4>
-                                    <span class="message-time">Oct 12</span>
-                                </div>
-                                <p class="text-muted" style="font-size: 0.85rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Receipt #89201 generated.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
 
                 <!-- Chat Window -->
                 <div class="chat-window">

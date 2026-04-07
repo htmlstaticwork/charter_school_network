@@ -17,4 +17,25 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 1000);
         });
     });
+
+    // Password toggle
+    const toggleBtns = document.querySelectorAll('.password-toggle-btn');
+    toggleBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const wrapper = btn.closest('.password-input-wrapper');
+            const input = wrapper.querySelector('input');
+            const eyeIcon = btn.querySelector('.eye-icon');
+            const eyeOffIcon = btn.querySelector('.eye-off-icon');
+
+            if (input.type === 'password') {
+                input.type = 'text';
+                if (eyeIcon) eyeIcon.style.display = 'none';
+                if (eyeOffIcon) eyeOffIcon.style.display = 'block';
+            } else {
+                input.type = 'password';
+                if (eyeIcon) eyeIcon.style.display = 'block';
+                if (eyeOffIcon) eyeOffIcon.style.display = 'none';
+            }
+        });
+    });
 });

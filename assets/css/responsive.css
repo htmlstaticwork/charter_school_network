@@ -174,11 +174,10 @@
 
   /* Footer Parallel Columns */
   .footer-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
   }
-  .footer-col:first-child,
-  .footer-col:last-child {
-    grid-column: span 2;
+  .footer-col:first-child {
+    grid-column: span 3;
   }
 
   /* CTA Buttons Single Line */
@@ -218,6 +217,14 @@
 
 
 @media (max-width: 576px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .footer-col:first-child,
+  .footer-col:last-child {
+    grid-column: span 2;
+  }
+
   /* Testimonials stacked only on mobile */
   .testimonial-author {
     flex-direction: column;

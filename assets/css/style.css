@@ -605,3 +605,36 @@ body.dark-mode .status-pending { background-color: var(--color-status-pending-bg
     height: 45px;
   }
 }
+
+/* ==========================================================================
+   Auth Forms & Password Toggle
+   ========================================================================== */
+.password-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.form-input.has-icon-right {
+  padding-right: 2.5rem;
+}
+.password-toggle-btn {
+  position: absolute;
+  right: 0.75rem;
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color var(--transition-fast);
+}
+.password-toggle-btn:hover {
+  color: var(--color-text-main);
+}
+.password-toggle-btn svg {
+  width: 18px;
+  height: 18px;
+  stroke-width: 2px;
+}

@@ -48,3 +48,47 @@ body.dark-mode select {
   color: var(--color-text-main);
   border-color: var(--color-border);
 }
+
+/* Native Date Picker Icon Fix */
+body.dark-mode input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(0.8);
+  cursor: pointer;
+}
+
+/* Button & Link Enhancements for Dark Mode */
+body.dark-mode .btn-outline {
+  border-color: var(--color-primary-light);
+  color: var(--color-primary-light);
+}
+
+body.dark-mode .btn-outline:hover {
+  background-color: var(--color-primary-light);
+  color: #ffffff;
+}
+
+body.dark-mode .nav-link i,
+body.dark-mode .sidebar-nav .nav-link i {
+  /* Ensure sidebar icons have good contrast */
+  opacity: 0.9;
+}
+
+body.dark-mode .nav-link.active i {
+  color: var(--color-secondary);
+  opacity: 1;
+}
+
+/* Quick link icons */
+body.dark-mode .quick-link i.text-secondary {
+  color: #fbbf24; /* Brighter amber for dark mode visibility */
+}
+
+/* Messaging Action Buttons in Dark Mode */
+body.dark-mode .chat-action-btn {
+  background-color: rgba(251, 191, 36, 0.15); /* Slightly more visible amber tint */
+  color: #fbbf24;
+}
+
+body.dark-mode .chat-action-btn:hover {
+  background-color: #fbbf24;
+  color: #020617;
+}

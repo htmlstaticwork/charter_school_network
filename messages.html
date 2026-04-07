@@ -49,6 +49,27 @@
         .chat-input-area { padding: 1.5rem 2rem; background: var(--color-bg-surface); border-top: 1px solid var(--color-border); display: flex; gap: 1rem; align-items: center; }
         .chat-input { flex: 1; padding: 0.75rem 1.25rem; border: 1px solid var(--color-border); border-radius: 2rem; outline: none; transition: border-color var(--transition-fast); background: var(--color-bg-alt); color: var(--color-text-main); }
         .chat-input:focus { border-color: var(--color-secondary); }
+
+        .chat-action-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: var(--radius-md);
+            border: none;
+            background: rgba(var(--color-secondary-rgb), 0.1);
+            color: var(--color-secondary);
+            cursor: pointer;
+            transition: all var(--transition-fast);
+        }
+        .chat-action-btn:hover {
+            background: var(--color-secondary);
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-sm);
+        }
+        .chat-action-btn i { width: 20px; height: 20px; }
         
         @media (max-width: 900px) { 
             #sidebar-toggle { display: block; margin-right: 1rem; }

@@ -181,6 +181,16 @@ body.dark-mode .status-pending { background-color: var(--color-status-pending-bg
   color: var(--color-primary) !important;
 }
 
+.btn-white {
+  background-color: #ffffff;
+  color: var(--color-secondary);
+  border: 2px solid #ffffff;
+}
+.btn-white:hover {
+  background-color: transparent;
+  color: #ffffff;
+}
+
 .nav-link:hover, .nav-link.active {
   color: var(--color-secondary);
 }
@@ -276,6 +286,33 @@ body.dark-mode .status-pending { background-color: var(--color-status-pending-bg
   padding: 0.5rem 1rem;
   font-size: 0.875rem;
 }
+
+/* ==========================================================================
+   Global CTA Section (Standardized Banner)
+   ========================================================================== */
+.cta-section {
+  background-color: var(--color-cta-bg);
+  padding: 5rem 0;
+  text-align: center;
+  color: #ffffff;
+}
+.cta-section .section-title {
+  color: #ffffff !important;
+  margin-bottom: 1.5rem;
+}
+.cta-section p {
+  max-width: 600px;
+  margin: 0 auto 2.5rem;
+  color: rgba(255,255,255,0.8);
+  font-size: 1.1rem;
+}
+.cta-section-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
 
 /* School Cards in Index */
 .school-card-img {

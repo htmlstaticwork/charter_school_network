@@ -132,12 +132,15 @@
   .hero-actions {
     justify-content: center;
     flex-direction: column;
+    align-items: center; /* Center buttons horizontally when stacked */
   }
   .premium-hero .hero-actions {
     padding-bottom: 4rem; /* Prevent overlap with negative margin USP section on mobile */
   }
   .hero-actions .btn {
-    width: 100%;
+    width: fit-content;
+    min-width: 260px;
+    margin: 0 auto;
   }
 
   /* Dashboard Adjustments */
@@ -183,17 +186,20 @@
   /* CTA Buttons Vertical Stack on Mobile */
   section[style*="--color-cta-bg"] > .container > div[style*="display: flex"] {
     flex-direction: column !important;
-    gap: 1rem !important;
+    gap: 1.5rem !important;
+    align-items: center !important; /* Ensure centered layout */
   }
   section[style*="--color-cta-bg"] > .container > div[style*="display: flex"] > .btn {
-    width: 100% !important;
-    padding: 0.8rem 1.5rem !important;
+    width: fit-content !important;
+    min-width: 260px !important;
+    padding: 0.8rem 2.5rem !important;
     font-size: 1rem !important;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    white-space: normal !important;
+    white-space: nowrap !important;
+    margin: 0 auto;
   }
   
   /* Strictly format filter buttons to 2x2 matrix on mobile */

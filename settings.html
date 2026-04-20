@@ -27,9 +27,9 @@
         .nav-link-danger { color: #ef4444 !important; display: flex; align-items: center; gap: 1rem; padding: 0.8rem 1.5rem; font-weight: 500; transition: all var(--transition-fast); }
         .nav-link-danger:hover { background: #fee2e2; color: #dc2626 !important; border-right: 3px solid #dc2626; }
         
-        .dashboard-main { flex: 1; display: flex; flex-direction: column; padding-top: 73px; }
-        .dashboard-header { background: var(--color-bg-surface); padding: 1rem 2rem; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--color-border); position: fixed; top: 0; right: 0; width: calc(100% - 280px); z-index: 40; }
-        .dashboard-content { padding: 2rem; max-width: 1000px; width: 100%; margin: 0; }
+        .dashboard-main { flex: 1; display: flex; flex-direction: column; overflow-x: hidden; }
+        .dashboard-header { background: var(--color-bg-surface); padding: 1rem 2rem; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--color-border); position: sticky; top: 0; z-index: 40; }
+        .dashboard-content { padding: 2rem; max-width: 1000px; width: 100%; margin: 0 auto; }
         
         .settings-grid { display: block; margin-top: 2rem; }
         .settings-nav { display: flex; flex-direction: column; gap: 0.5rem; }
@@ -119,9 +119,11 @@
                 </div>
                 
                 <div style="display: flex; align-items: center; gap: 1rem;">
-                    <button id="theme-toggle" class="theme-toggle"><i data-lucide="sun"></i></button>
+                    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg></button>
                     <button id="rtl-toggle" class="theme-toggle" aria-label="Toggle RTL" style="font-weight: 800; font-size: 0.75rem;">RTL</button>
-                    <div style="width: 32px; height: 32px; border-radius: 50%; background: var(--color-primary); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 600;">SJ</div>
+                    <div class="user-profile-btn">
+                        <div class="user-avatar">SJ</div>
+                    </div>
                 </div>
             </header>
 
@@ -133,7 +135,7 @@
                         <div class="profile-header" style="display: flex; align-items: center; gap: 1.5rem; margin-bottom: 2.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--color-border);">
                             <div style="width: 80px; height: 80px; border-radius: 50%; background: var(--color-primary); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 600; flex-shrink: 0;">SJ</div>
                             <div>
-                                <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem;">Sarah Jenkins</h3>
+                                <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem;">Sara J</h3>
                                 <div class="profile-header-actions" style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
                                     <button class="btn btn-primary" style="padding: 0.4rem 1rem; font-size: 0.875rem;">Change Photo</button>
                                     <button class="btn btn-outline" style="padding: 0.4rem 1rem; font-size: 0.875rem;">Remove</button>

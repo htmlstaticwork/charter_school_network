@@ -133,9 +133,11 @@
                 </div>
                 
                 <div style="display: flex; align-items: center; gap: 1rem;">
-                    <button id="theme-toggle" class="theme-toggle"><i data-lucide="sun"></i></button>
+                    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg></button>
                     <button id="rtl-toggle" class="theme-toggle" aria-label="Toggle RTL" style="font-weight: 800; font-size: 0.75rem;">RTL</button>
-                    <div style="width: 32px; height: 32px; border-radius: 50%; background: var(--color-primary); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 600;">SJ</div>
+                    <div class="user-profile-btn">
+                        <div class="user-avatar">SJ</div>
+                    </div>
                 </div>
             </header>
 
@@ -162,7 +164,7 @@
                     <div class="chat-messages">
                         <div class="message received">
                             <div class="message-bubble">
-                                Hello Sarah! I've just reviewed the application for Leo Jenkins. All the primary documents look perfect.
+                                Hello Sara! I've just reviewed the application for Leo Jenkins. All the primary documents look perfect.
                             </div>
                             <span class="message-time">10:30 AM</span>
                         </div>

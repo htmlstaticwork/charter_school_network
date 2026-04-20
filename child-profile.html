@@ -137,48 +137,61 @@
                     <h2 style="font-size: 1.25rem; font-weight: 600;">Manage Profiles</h2>
                 </div>
                 
-                <div style="display: flex; align-items: center; gap: 1.5rem;">
-                                                    
-                                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg></button>
-                <button id="rtl-toggle" class="theme-toggle" aria-label="Toggle RTL" style="font-weight: 800; font-size: 0.75rem;">RTL</button>
+                <div style="display: flex; align-items: center; gap: 1rem;">
+                    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg></button>
+                    <button id="rtl-toggle" class="theme-toggle" aria-label="Toggle RTL" style="font-weight: 800; font-size: 0.75rem;">RTL</button>
+                    <div class="user-profile-btn">
+                        <div class="user-avatar">SJ</div>
                     </div>
                 </div>
+            </header>
 
+            <div class="dashboard-content">
                 <!-- Forms Grid -->
-                <div style="display: grid; grid-template-columns: 1fr; gap: 2rem; @media(min-width: 992px){grid-template-columns: 2fr 1fr;}">
+                <div style="display: grid; grid-template-columns: 1fr; gap: 2rem;">
                     
                     <div style="background: var(--color-bg-surface); padding: 2rem; border-radius: var(--radius-lg); box-shadow: var(--shadow-sm);">
-                        <h4 style="margin-bottom: 1.5rem; font-size: 1.1rem; border-bottom: 1px solid var(--color-border); padding-bottom: 1rem;">Personal Information</h4>
+                        <div style="display: flex; align-items: center; gap: 1.5rem; margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--color-border);">
+                            <div style="width: 80px; height: 80px; border-radius: 50%; background: var(--color-bg-alt); color: var(--color-secondary); display: flex; align-items: center; justify-content: center;">
+                                <i data-lucide="user" style="width: 40px; height: 40px;"></i>
+                            </div>
+                            <div>
+                                <h3 style="font-size: 1.25rem; margin-bottom: 0.25rem;">Leo Jenkins</h3>
+                                <p class="text-muted" style="font-size: 0.9rem;">Grade 6 Student • North Campus</p>
+                            </div>
+                        </div>
+
+                        <h4 style="margin-bottom: 1.5rem; font-size: 1.1rem;">Personal Information</h4>
                         
                         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;">
                             <div class="form-group">
                                 <label class="form-label">First Name</label>
-                                <input type="text" class="form-input">
+                                <input type="text" class="form-input" value="Leo">
                             </div>
                             <div class="form-group">
                                 <label class="form-label">Last Name</label>
-                                <input type="text" class="form-input">
+                                <input type="text" class="form-input" value="Jenkins">
                             </div>
                         </div>
                         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;">
                             <div class="form-group">
                                 <label class="form-label">Date of Birth</label>
-                                <input type="date" class="form-input">
+                                <input type="date" class="form-input" value="2014-05-12">
                             </div>
                             <div class="form-group">
                                 <label class="form-label">Assigned Campus</label>
-                                <input type="text" class="form-input">
+                                <input type="text" class="form-input" value="North Campus" disabled>
                             </div>
                         </div>
                         
                         <h4 style="margin: 2rem 0 1.5rem; font-size: 1.1rem; border-bottom: 1px solid var(--color-border); padding-bottom: 1rem;">Medical Info (Emergency Copy)</h4>
                         <div class="form-group">
                             <label class="form-label">Allergies</label>
-                            <input type="text" class="form-input">
+                            <input type="text" class="form-input" value="Peanuts, Shellfish">
                         </div>
                         <div class="form-group">
                             <label class="form-label">Primary Physician</label>
-                            <input type="text" class="form-input">
+                            <input type="text" class="form-input" value="Dr. Robert Smith (555-0199)">
                         </div>
 
                         <div style="display: flex; justify-content: flex-end; margin-top: 2rem;">
@@ -186,25 +199,22 @@
                         </div>
                     </div>
                     
-                    <div style="display: flex; flex-direction: column; gap: 2rem;">
-                        <div style="background: var(--color-bg-surface); padding: 2rem; border-radius: var(--radius-lg); box-shadow: var(--shadow-sm);">
-                            <h4 style="margin-bottom: 1.5rem; font-size: 1.1rem;">Quick Links</h4>
-                            <div style="display: flex; flex-direction: column; gap: 0.5rem;">
-                                <a href="#" class="quick-link">
-                                    <i data-lucide="file-check" class="text-secondary" style="width: 16px;"></i> View Report Cards
-                                </a>
-                                <a href="#" class="quick-link">
-                                    <i data-lucide="clipboard-list" class="text-secondary" style="width: 16px;"></i> Attendance Record
-                                </a>
-                                <a href="#" class="quick-link" style="border-bottom: none;">
-                                    <i data-lucide="dollar-sign" class="text-secondary" style="width: 16px;"></i> Lunch Balance
-                                </a>
-                            </div>
+                    <div style="background: var(--color-bg-surface); padding: 2rem; border-radius: var(--radius-lg); box-shadow: var(--shadow-sm);">
+                        <h4 style="margin-bottom: 1.5rem; font-size: 1.1rem;">Quick Links</h4>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                            <a href="#" class="quick-link">
+                                <i data-lucide="file-check" class="text-secondary" style="width: 16px;"></i> View Report Cards
+                            </a>
+                            <a href="#" class="quick-link">
+                                <i data-lucide="clipboard-list" class="text-secondary" style="width: 16px;"></i> Attendance Record
+                            </a>
+                            <a href="#" class="quick-link">
+                                <i data-lucide="dollar-sign" class="text-secondary" style="width: 16px;"></i> Lunch Balance
+                            </a>
                         </div>
                     </div>
 
                 </div>
-
             </div>
         </main>
     </div>

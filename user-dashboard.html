@@ -214,21 +214,101 @@
                 <div style="display: flex; align-items: center; gap: 1rem;">
                     <button id="sidebar-toggle" class="mobile-menu-toggle" style="background:none; border:none; cursor:pointer; color: var(--color-text-main);" aria-label="Open sidebar"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" x2="21" y1="6" y2="6"/><line x1="3" x2="21" y1="12" y2="12"/><line x1="3" x2="21" y1="18" y2="18"/></svg></button>
                     <div>
-                        <h2 style="font-size: 1.25rem; font-weight: 600;">Welcome back, Sarah! 👋</h2>
+                        <h2 style="font-size: 1.25rem; font-weight: 600;">Welcome back, Sara! 👋</h2>
                         <span class="text-muted" style="font-size: 0.875rem;">Here is what's happening today.</span>
                     </div>
                 </div>
                 
-                <div style="display: flex; align-items: center; gap: 1.5rem;">
-                                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg></button>
-                <button id="rtl-toggle" class="theme-toggle" aria-label="Toggle RTL" style="font-weight: 800; font-size: 0.75rem;">RTL</button>
-                                <button class="btn btn-outline" style="width: 100%; justify-content: center;"><i data-lucide="credit-card"></i> Pay Fees</button>
-                                <button class="btn btn-outline" style="width: 100%; justify-content: center;"><i data-lucide="phone"></i> Contact Support</button>
-                            </div>
+                <div style="display: flex; align-items: center; gap: 1rem;">
+                    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg></button>
+                    <button id="rtl-toggle" class="theme-toggle" aria-label="Toggle RTL" style="font-weight: 800; font-size: 0.75rem;">RTL</button>
+                    <div class="user-profile-btn">
+                        <div class="user-avatar">SJ</div>
+                        <span style="font-weight: 500; font-size: 0.9rem;" class="hide-mobile">Sara J</span>
+                    </div>
+                </div>
+            </header>
+
+            <div class="dashboard-content">
+                <!-- Metrics Grid -->
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
+                    <div class="metric-card">
+                        <div class="metric-icon"><i data-lucide="user"></i></div>
+                        <div>
+                            <p class="text-muted" style="font-size: 0.875rem; margin-bottom: 0.25rem;">Student Name</p>
+                            <h3 style="font-size: 1.25rem; font-weight: 700;">Leo Jenkins</h3>
+                        </div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon" style="color: #10b981; background: rgba(16, 185, 129, 0.1);"><i data-lucide="calendar-check"></i></div>
+                        <div>
+                            <p class="text-muted" style="font-size: 0.875rem; margin-bottom: 0.25rem;">Attendance</p>
+                            <h3 style="font-size: 1.25rem; font-weight: 700;">98.4%</h3>
+                        </div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon" style="color: #6366f1; background: rgba(99, 102, 241, 0.1);"><i data-lucide="award"></i></div>
+                        <div>
+                            <p class="text-muted" style="font-size: 0.875rem; margin-bottom: 0.25rem;">G.P.A</p>
+                            <h3 style="font-size: 1.25rem; font-weight: 700;">3.8 / 4.0</h3>
+                        </div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon" style="color: #f59e0b; background: rgba(245, 158, 11, 0.1);"><i data-lucide="clock"></i></div>
+                        <div>
+                            <p class="text-muted" style="font-size: 0.875rem; margin-bottom: 0.25rem;">Next Holiday</p>
+                            <h3 style="font-size: 1.25rem; font-weight: 700;">Oct 24 (4 Days)</h3>
                         </div>
                     </div>
                 </div>
 
+                <div class="dashboard-updates-grid" style="display: grid; gap: 2rem;">
+                    <!-- Latest Updates -->
+                    <div style="background: var(--color-bg-surface); border-radius: var(--radius-lg); padding: 1.5rem; box-shadow: var(--shadow-sm);">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+                            <h4 style="font-size: 1.1rem; font-weight: 600;">Latest School Updates</h4>
+                            <a href="#" class="view-all-link">View All</a>
+                        </div>
+                        
+                        <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                            <div style="display: flex; gap: 1rem;">
+                                <div style="width: 8px; height: 8px; border-radius: 50%; background: var(--color-secondary); margin-top: 0.5rem;"></div>
+                                <div>
+                                    <h5 style="font-size: 0.95rem; margin-bottom: 0.25rem;">Quarter 1 Report Cards Released</h5>
+                                    <p class="text-muted" style="font-size: 0.875rem;">Leo's report card for the first quarter is now available for download.</p>
+                                    <span class="text-muted" style="font-size: 0.75rem;">2 hours ago</span>
+                                </div>
+                            </div>
+                            <div style="display: flex; gap: 1rem;">
+                                <div style="width: 8px; height: 8px; border-radius: 50%; background: #94a3b8; margin-top: 0.5rem;"></div>
+                                <div>
+                                    <h5 style="font-size: 0.95rem; margin-bottom: 0.25rem;">Annual Science Fair Projects Due</h5>
+                                    <p class="text-muted" style="font-size: 0.875rem;">Please ensure all materials are submitted online by Friday afternoon.</p>
+                                    <span class="text-muted" style="font-size: 0.75rem;">1 day ago</span>
+                                </div>
+                            </div>
+                            <div style="display: flex; gap: 1rem;">
+                                <div style="width: 8px; height: 8px; border-radius: 50%; background: #94a3b8; margin-top: 0.5rem;"></div>
+                                <div>
+                                    <h5 style="font-size: 0.95rem; margin-bottom: 0.25rem;">PTA Meeting Postponed</h5>
+                                    <p class="text-muted" style="font-size: 0.875rem;">The October PTA meeting has been moved to next Tuesday at 6:00 PM.</p>
+                                    <span class="text-muted" style="font-size: 0.75rem;">3 days ago</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Actions -->
+                    <div style="background: var(--color-bg-surface); border-radius: var(--radius-lg); padding: 1.5rem; box-shadow: var(--shadow-sm);">
+                        <h4 style="font-size: 1.1rem; font-weight: 600; margin-bottom: 1.5rem;">Quick Actions</h4>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                            <button class="btn btn-outline" style="justify-content: center; padding: 1rem;"><i data-lucide="credit-card"></i> Pay Fees</button>
+                            <button class="btn btn-outline" style="justify-content: center; padding: 1rem;"><i data-lucide="phone"></i> Help Desk</button>
+                            <button class="btn btn-outline" style="justify-content: center; padding: 1rem;"><i data-lucide="file-text"></i> Register Child</button>
+                            <button class="btn btn-outline" style="justify-content: center; padding: 1rem;"><i data-lucide="clipboard-list"></i> Forms</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </main>
     </div>

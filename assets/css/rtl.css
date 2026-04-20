@@ -6,8 +6,12 @@ body.rtl {
   text-align: right;
 }
 
+body.rtl .navbar .container {
+  flex-direction: row;
+}
+
 body.rtl .navbar-brand {
-  flex-direction: row-reverse;
+  /* Natural RTL flow will put icon on right of text */
 }
 
 body.rtl .navbar-nav {
@@ -15,7 +19,7 @@ body.rtl .navbar-nav {
 }
 
 body.rtl .navbar-actions {
-  flex-direction: row-reverse;
+  /* Natural RTL flow will mirror the button cluster to the left */
 }
 
 body.rtl .dropdown-menu {
@@ -25,16 +29,33 @@ body.rtl .dropdown-menu {
 }
 
 body.rtl .btn {
-  flex-direction: row-reverse;
+  /* Natural RTL flow handles internal button element order */
 }
 
 body.rtl .hero-actions {
-  flex-direction: row-reverse;
+  /* Natural RTL flow handles button order */
 }
 
 body.rtl .dashboard-sidebar {
   border-right: none;
   border-left: 1px solid var(--color-border);
 }
+
+body.rtl .sidebar-nav .nav-link:hover, 
+body.rtl .sidebar-nav .nav-link.active {
+  border-right: none;
+  border-left: 3px solid var(--color-secondary);
+}
+
+body.rtl .auth-toggles {
+  right: auto;
+  left: 1.5rem;
+}
+
+body.rtl .sidebar-nav .nav-link span {
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
+
 
 

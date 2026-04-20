@@ -6,9 +6,9 @@
   --color-primary: #0f172a; /* Deep Navy */
   --color-primary-light: #1e293b;
   --color-text-on-primary: #ffffff;
-  --color-secondary: #d97706; /* Premium Gold/Amber (Accent 1) */
-  --color-secondary-rgb: 217, 119, 6;
-  --color-secondary-hover: #b45309;
+  --color-secondary: #3b82f6; /* Unified Blue (instead of Amber) */
+  --color-secondary-rgb: 59, 130, 246;
+  --color-secondary-hover: #2563eb;
   
   --color-cta-bg: #3b82f6; /* Bright blue for CTA backgrounds */
   
@@ -283,11 +283,20 @@ body.dark-mode .status-pending { background-color: var(--color-status-pending-bg
   height: 250px;
   object-fit: cover;
 }
+/* Schools Grid Layout */
 .schools-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
 }
+
+/* Center the last card if it's the only one in its row (Desktop only) */
+@media (min-width: 993px) {
+  .schools-grid .card:last-child:nth-child(3n + 1) {
+    grid-column: 2;
+  }
+}
+
 .school-card-body {
   padding: 1.5rem;
 }
@@ -455,15 +464,20 @@ body.dark-mode .status-pending { background-color: var(--color-status-pending-bg
   border-color: var(--color-secondary);
 }
 
-.schools-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
+.schools-grid .card {
+  width: 100%;
 }
 
-.schools-grid .card {
-  flex: 0 1 380px;
+@media (max-width: 992px) {
+  .schools-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .schools-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .school-card-body {

@@ -53,7 +53,7 @@
             transition: background var(--transition-fast);
         }
         .notification-item.unread {
-            background: rgba(217, 119, 6, 0.05);
+            background: rgba(59, 130, 246, 0.05);
             border-left: 4px solid var(--color-secondary);
         }
         .notification-icon {
@@ -63,7 +63,7 @@
             flex-shrink: 0; color: var(--color-text-muted);
         }
         .notification-item.unread .notification-icon {
-            background: rgba(217, 119, 6, 0.1);
+            background: rgba(59, 130, 246, 0.1);
             color: var(--color-secondary);
         }
         .time-stamp { font-size: 0.8rem; color: var(--color-text-muted); margin-top: 0.5rem; }
@@ -164,42 +164,7 @@
                 <div style="display: flex; align-items: center; gap: 1.5rem;">
                                                     
                                 <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg></button>
-                <button id="rtl-toggle" class="theme-toggle" aria-label="Toggle RTL"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></svg></button>
-                    <div class="user-profile-btn">
-                        <div class="user-avatar">SJ</div>
-                    </div>
-                </div>
-            </header>
-
-            <div class="dashboard-content">
-                
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
-                    <div>
-                        <button class="btn btn-outline" style="padding: 0.5rem 1rem; margin-right: 0.5rem;">All</button>
-                        <button class="btn btn-filter">Unread</button>
-                    </div>
-                    <button class="btn-text-muted">Mark all as read</button>
-                </div>
-
-                <div class="notifications-list">
-                    
-                    <div class="notification-item unread">
-                        <div class="notification-icon"><i data-lucide="file-text"></i></div>
-                        <div>
-                            <h4 style="font-size: 1.05rem; margin-bottom: 0.25rem;">Application Update: In Review</h4>
-                            <p class="text-muted" style="font-size: 0.95rem;">The application for Leo Jenkins has moved to the "In Review" phase. No further action is required at this time.</p>
-                            <div class="time-stamp">Today at 10:42 AM</div>
-                        </div>
-                    </div>
-                    
-                    <div class="notification-item unread">
-                        <div class="notification-icon"><i data-lucide="credit-card"></i></div>
-                        <div>
-                            <h4 style="font-size: 1.05rem; margin-bottom: 0.25rem;">Lunch Balance Low</h4>
-                            <p class="text-muted" style="font-size: 0.95rem;">The lunch balance for Leo is below $10.00. Please top up the account soon.</p>
-                            <div class="time-stamp">Yesterday at 3:15 PM</div>
-                            <div style="margin-top: 0.75rem;">
-                                <button class="btn btn-primary" style="padding: 0.4rem 1rem; font-size: 0.8rem;">Top Up Now</button>
+                <button id="rtl-toggle" class="theme-toggle" aria-label="Toggle RTL" style="font-weight: 800; font-size: 0.75rem;">RTL</button>
                             </div>
                         </div>
                     </div>

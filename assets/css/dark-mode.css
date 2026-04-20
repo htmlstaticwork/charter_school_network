@@ -2,29 +2,28 @@
    Dark Mode Definitions
    ========================================================================== */
 body.dark-mode {
-  --color-bg-main: #020617; /* Slate 950 */
-  --color-bg-surface: #1e293b; /* Slate 800 (Cards, Elevated) */
-  --color-bg-alt: #0f172a; /* Slate 900 (Alternate Sections) */
+  --color-bg-main: #000000; /* Pure Black */
+  --color-bg-surface: #111111; /* Very Dark Grey (Cards, Elevated) */
+  --color-bg-alt: #0a0a0a; /* Deep charcoal (Alternate Sections) */
   
   --color-text-main: #cbd5e1; /* Slate 300 */
   --color-text-muted: #94a3b8; /* Slate 400 */
   --color-text-heading: #f8fafc; /* Slate 50 */
   
-  --color-border: #334155; /* Slate 700 */
+  --color-border: #1e293b; /* Slate 800 */
   
-  /* Primary shifts to a darker shade to maintain contrast with white text in dark mode */
   --color-primary: #3b82f6; /* Blue 500 */
   --color-primary-light: #60a5fa; /* Blue 400 */
   --color-text-on-primary: #ffffff;
   
-  --color-cta-bg: #0f172a; /* Navy for CTA blocks in dark mode */
+  --color-cta-bg: #000000; /* Pure Black for CTA blocks in dark mode */
   
-  /* Status Accent Backgrounds for Dark Mode */
-  --color-status-pending-bg: #451a03; /* Dark Amber */
-  --color-status-pending-text: #fbbf24; /* Amber 400 */
-  --color-status-info-bg: #082f49; /* Dark Blue/Cyan */
-  --color-status-info-text: #38bdf8; /* Sky 400 */
- }
+  /* Status Accent Backgrounds for Dark Mode - Unified Blue/Azure */
+  --color-status-pending-bg: #1e3a8a; /* Dark Blue */
+  --color-status-pending-text: #93c5fd; /* Light Blue 300 */
+  --color-status-info-bg: #0c4a6e; /* Deep Cyan */
+  --color-status-info-text: #7dd3fc; /* Sky 300 */
+}
 
 
 body.dark-mode .btn-secondary {
@@ -36,7 +35,7 @@ body.dark-mode .btn-secondary:hover {
 }
 
 body.dark-mode .footer {
-  background-color: #020617; /* Even darker footer */
+  background-color: #000000; /* Pure black footer */
   border-top: 1px solid var(--color-border);
 }
 
@@ -79,16 +78,16 @@ body.dark-mode .nav-link.active i {
 
 /* Quick link icons */
 body.dark-mode .quick-link i.text-secondary {
-  color: #fbbf24; /* Brighter amber for dark mode visibility */
+  color: #3b82f6; /* Unified Blue */
 }
 
 /* Messaging Action Buttons in Dark Mode */
 body.dark-mode .chat-action-btn {
-  background-color: rgba(251, 191, 36, 0.15); /* Slightly more visible amber tint */
-  color: #fbbf24;
+  background-color: rgba(59, 130, 246, 0.15); /* Unified Blue tint */
+  color: #3b82f6;
 }
 
 body.dark-mode .chat-action-btn:hover {
-  background-color: #fbbf24;
-  color: #020617;
+  background-color: #3b82f6;
+  color: #000000;
 }

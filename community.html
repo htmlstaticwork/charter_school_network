@@ -49,22 +49,39 @@
         }
         .resource-grid {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 2rem;
+            flex-direction: column;
+            gap: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
         }
         .resource-card {
-            flex: 0 1 280px;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
             background: var(--color-bg-surface);
-            padding: 2rem;
-            text-align: center;
+            padding: 1.5rem 2rem;
+            text-align: left;
             border-radius: var(--radius-md);
             border: 1px solid var(--color-border);
             transition: all var(--transition-fast);
+            text-decoration: none;
+            color: inherit;
+        }
+        .resource-card i {
+            flex-shrink: 0;
+            margin-bottom: 0 !important;
         }
         .resource-card:hover {
             border-color: var(--color-secondary);
             background: var(--color-bg-alt);
+            transform: translateX(10px);
+        }
+        @media (max-width: 600px) {
+            .resource-card {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
         }
         @media (max-width: 768px) {
             .event-card { flex-direction: column; }
@@ -109,7 +126,7 @@
                 <a href="login.html" class="btn btn-outline">Login</a>
                 <a href="user-dashboard.html" class="btn btn-primary">Dashboard</a>
                 <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg></button>
-                <button id="rtl-toggle" class="theme-toggle" aria-label="Toggle RTL"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></svg></button>
+                <button id="rtl-toggle" class="theme-toggle" aria-label="Toggle RTL" style="font-weight: 800; font-size: 0.75rem;">RTL</button>
                 <button class="mobile-menu-toggle">
                     <i data-lucide="menu"></i>
                 </button>

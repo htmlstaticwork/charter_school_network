@@ -106,6 +106,19 @@
             justify-content: center;
             border: 1px solid var(--color-border);
         }
+
+        @media (max-width: 360px) {
+            .next-steps-title {
+                font-size: 0.85rem !important;
+                white-space: nowrap;
+                display: flex;
+                align-items: center;
+            }
+            .next-steps-title i {
+                width: 14px !important;
+                height: 14px !important;
+            }
+        }
         </style>
     <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
 </head>
@@ -207,7 +220,7 @@
                     </div>
 
                     <div style="background: var(--color-bg-alt); padding: 1.5rem; border-radius: var(--radius-md); margin-top: 2rem;">
-                        <h5 style="margin-bottom: 1rem; font-size: 1rem;"><i data-lucide="info" style="width: 16px; display: inline-block; vertical-align: middle; margin-right: 0.5rem;" class="text-secondary"></i> Next Steps Required</h5>
+                        <h5 class="next-steps-title" style="margin-bottom: 1rem; font-size: 1rem;"><i data-lucide="info" style="width: 16px; display: inline-block; vertical-align: middle; margin-right: 0.5rem;" class="text-secondary"></i> Next Steps Required</h5>
                         <p class="text-muted" style="font-size: 0.95rem;">Your initial documents have been verified. Our admissions team is currently reviewing the academic records. We will contact you shortly to schedule the candidate interview phase.</p>
                         <div style="margin-top: 1rem;">
                             <button class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.875rem;">View Uploaded Documents</button>

@@ -74,6 +74,10 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+body.has-fixed-navbar {
+  padding-top: 72px; /* Offset for fixed navbar */
+}
+
 h1, h2, h3, h4, h5, h6 {
   color: var(--color-text-heading);
   font-weight: 700;
@@ -215,8 +219,10 @@ body.dark-mode .status-pending { background-color: var(--color-status-pending-bg
    Navbar
    ========================================================================== */
 .navbar {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 1000;
   background-color: var(--color-bg-surface);
   box-shadow: var(--shadow-sm);

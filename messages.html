@@ -92,6 +92,31 @@
             .chat-header .chat-action-btn:nth-child(2) { display: none; }
         }
 
+        /* Extra Narrow Mobile View (360px and below) */
+        @media (max-width: 360px) {
+            .dashboard-header { padding: 0.75rem 1rem !important; }
+            .dashboard-header h2 { font-size: 1.1rem !important; }
+            
+            .chat-header { padding: 0.75rem 0.75rem !important; gap: 0.5rem !important; }
+            .chat-header h3 { font-size: 0.85rem !important; white-space: nowrap; }
+            .chat-header span { font-size: 0.65rem !important; }
+            .chat-header .chat-action-btn { width: 30px !important; height: 30px !important; }
+            .chat-header .chat-action-btn i { width: 14px !important; height: 14px !important; }
+            .chat-header .chat-avatar { width: 32px !important; height: 32px !important; font-size: 0.8rem !important; }
+
+            .chat-messages { padding: 1rem 0.75rem; }
+            .message-bubble { font-size: 0.875rem !important; padding: 0.6rem 0.8rem !important; }
+            
+            .chat-input-area { padding: 0.75rem !important; gap: 0.5rem !important; }
+            .chat-input { font-size: 0.85rem !important; padding: 0.6rem 1rem !important; }
+
+            /* Remove upper empty space */
+            .dashboard-main { padding-top: 0 !important; margin-top: 0 !important; }
+            .dashboard-header { margin-top: 0 !important; padding-top: 0.5rem !important; padding-bottom: 0.5rem !important; }
+            .dashboard-content { padding-top: 0 !important; margin-top: 0 !important; }
+            .chat-window { border-top-left-radius: 0; border-top-right-radius: 0; margin-top: 0 !important; }
+        }
+
         /* Responsive Utilities */
         @media (max-width: 900px) {
             .hide-mobile { display: none !important; }
@@ -183,7 +208,7 @@
                 <div class="chat-window">
                     <div class="chat-header">
                         <div style="display: flex; align-items: center; gap: 1rem;">
-                            <div style="width: 40px; height: 40px; border-radius: 50%; background: var(--color-primary); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 600;">AO</div>
+                            <div class="chat-avatar" style="width: 40px; height: 40px; border-radius: 50%; background: var(--color-primary); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 600;">AO</div>
                             <div>
                                 <h3 style="font-size: 1rem; font-weight: 600;">Admissions Office</h3>
                                 <span style="font-size: 0.75rem; color: #22c55e;">Online • General Inquiries</span>

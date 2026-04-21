@@ -157,22 +157,32 @@
     border-right: none;
   }
   
-  /* Universal Dashboard Header Mobile Fixes */
+  /* Universal Dashboard Header Responsive Fixes */
   .dashboard-header {
-    padding: 0.75rem 1rem !important; /* Reduce padding to free up horizontal space */
+    padding: 0.75rem 1.5rem !important;
   }
   .dashboard-header > div {
-    gap: 0.5rem !important; /* Reduce gap between logical groups */
+    gap: 0.75rem !important;
   }
   .dashboard-header h2 {
     font-size: 1.1rem !important;
     white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: 130px; /* Prevent long names like "Welcome back, Sarah!" from line-wrapping */
+    max-width: none; 
+    transition: all 0.3s ease;
   }
-  .dashboard-header .text-muted {
-    display: none !important; /* Hide sub-text like "Here is what's happening" to save header height */
+
+  @media (max-width: 768px) {
+    .dashboard-header { padding: 0.75rem 1rem !important; }
+    .dashboard-header h2 { font-size: 1.05rem !important; }
+    .dashboard-header .text-muted { display: none !important; }
+  }
+
+  @media (max-width: 480px) {
+    .dashboard-header h2 { font-size: 0.95rem !important; }
+  }
+
+  @media (max-width: 360px) {
+    .dashboard-header h2 { font-size: 0.85rem !important; }
   }
 
   /* Footer Parallel Columns */

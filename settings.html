@@ -7,28 +7,12 @@
     <!-- CSS Assets -->
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/css/dashboard.css">
     <link rel="stylesheet" href="assets/css/dark-mode.css">
     <link rel="stylesheet" href="assets/css/rtl.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-        body { background: var(--color-bg-alt); }
-        .dashboard-layout { display: flex; min-height: 100vh; }
-        .dashboard-sidebar {
-            width: 280px; background: var(--color-bg-surface); border-right: 1px solid var(--color-border);
-            display: flex; flex-direction: column; position: sticky; top: 0; height: 100vh; z-index: 50; transition: all var(--transition-normal);
-        }
-        .sidebar-header { padding: 1.5rem; border-bottom: 1px solid var(--color-border); display: flex; align-items: center; justify-content: space-between; }
-        .sidebar-nav { padding: 1rem 0; flex-grow: 1; overflow-y: auto; }
-        .sidebar-nav .nav-link { display: flex; align-items: center; gap: 1rem; padding: 0.8rem 1.5rem; color: var(--color-text-muted); font-weight: 500; transition: all var(--transition-fast); }
-        .sidebar-nav .nav-link:hover, .sidebar-nav .nav-link.active { color: var(--color-secondary); background: var(--color-bg-alt); border-right: 3px solid var(--color-secondary); }
-        .sidebar-nav .nav-link i { width: 20px; }
-        .sidebar-footer { padding: 1.5rem; border-top: 1px solid var(--color-border); }
-        .nav-link-danger { color: #ef4444 !important; display: flex; align-items: center; gap: 1rem; padding: 0.8rem 1.5rem; font-weight: 500; transition: all var(--transition-fast); }
-        .nav-link-danger:hover { background: #fee2e2; color: #dc2626 !important; border-right: 3px solid #dc2626; }
-        
-        .dashboard-main { flex: 1; display: flex; flex-direction: column; overflow-x: hidden; }
-        .dashboard-header { background: var(--color-bg-surface); padding: 1rem 2rem; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--color-border); position: sticky; top: 0; z-index: 40; }
         .dashboard-content { padding: 2rem; max-width: 1000px; width: 100%; margin: 0 auto; }
         
         .settings-grid { display: block; margin-top: 2rem; }
@@ -49,34 +33,6 @@
         .slider:before { position: absolute; content: ""; height: 18px; width: 18px; left: 3px; bottom: 3px; background-color: white; transition: .4s; border-radius: 50%; }
         input:checked + .slider { background-color: var(--color-secondary); }
         input:checked + .slider:before { transform: translateX(20px); }
-        
-        @media (max-width: 900px) { 
-            #sidebar-toggle { display: block; margin-right: 1rem; }
-            .dashboard-sidebar { left: -100%; position: fixed; box-shadow: 10px 0 30px rgba(0,0,0,0.3); }
-            .dashboard-sidebar.open { left: 0; }
-            .dashboard-header { width: 100%; }
-        }
-
-        /* Responsive Utilities */
-        @media (max-width: 900px) {
-            .hide-mobile { display: none !important; }
-            .show-mobile-only { display: flex !important; }
-        }
-        @media (min-width: 901px) {
-            .show-mobile-only { display: none !important; }
-        }
-
-        .sidebar-toggles {
-            display: none;
-            padding: 1rem 1.5rem;
-            gap: 1rem;
-            border-top: 1px solid var(--color-border);
-        }
-        .sidebar-toggles .theme-toggle {
-            flex: 1;
-            justify-content: center;
-            border: 1px solid var(--color-border);
-        }
         
         @media (max-width: 800px) {
             .settings-grid { grid-template-columns: 1fr; }

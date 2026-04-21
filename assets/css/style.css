@@ -136,9 +136,16 @@ body.dark-mode .status-pending { background-color: var(--color-status-pending-bg
   border-radius: var(--radius-md);
   font-weight: 600;
   cursor: pointer;
-  border: none;
+  border: 2px solid transparent;
   transition: all var(--transition-normal);
   text-align: center;
+  line-height: 1.2; /* Controlled line height */
+}
+
+.btn i, .btn svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
 }
 
 .btn-primary {

@@ -163,6 +163,33 @@
             .dashboard-main { padding-top: 70px; }
             .dashboard-header { position: fixed; width: 100%; top: 0; z-index: 500; }
         }
+
+        /* Responsive Utilities */
+        @media (max-width: 900px) {
+            .hide-mobile { display: none !important; }
+            .show-mobile-only { display: flex !important; }
+        }
+        @media (min-width: 901px) {
+            .show-mobile-only { display: none !important; }
+        }
+
+        .sidebar-toggles {
+            display: none;
+            padding: 1rem 1.5rem;
+            gap: 1rem;
+            border-top: 1px solid var(--color-border);
+        }
+        .sidebar-toggles .theme-toggle {
+            flex: 1;
+            justify-content: center;
+            border: 1px solid var(--color-border);
+        }
+
+        @media (max-width: 600px) {
+            .dashboard-section-title {
+                font-size: 0.95rem !important;
+            }
+        }
         </style>
     <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
 </head>
@@ -202,6 +229,10 @@
             </nav>
             
             <div class="sidebar-footer">
+                <div class="sidebar-toggles show-mobile-only">
+                    <button class="theme-toggle theme-toggle-btn" aria-label="Toggle dark mode"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg></button>
+                    <button class="theme-toggle rtl-toggle-btn" aria-label="Toggle RTL" style="font-weight: 800; font-size: 0.75rem;">RTL</button>
+                </div>
                 <a href="login.html" class="nav-link nav-link-danger">
                     <i data-lucide="log-out"></i> Logout
                 </a>
@@ -220,8 +251,8 @@
                 </div>
                 
                 <div style="display: flex; align-items: center; gap: 1rem;">
-                    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg></button>
-                    <button id="rtl-toggle" class="theme-toggle" aria-label="Toggle RTL" style="font-weight: 800; font-size: 0.75rem;">RTL</button>
+                    <button class="theme-toggle theme-toggle-btn hide-mobile" aria-label="Toggle dark mode"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg></button>
+                    <button class="theme-toggle rtl-toggle-btn hide-mobile" aria-label="Toggle RTL" style="font-weight: 800; font-size: 0.75rem;">RTL</button>
                     <div class="user-profile-btn">
                         <div class="user-avatar">SJ</div>
                         <span style="font-weight: 500; font-size: 0.9rem;" class="hide-mobile">Sara J</span>
@@ -265,8 +296,8 @@
                 <div class="dashboard-updates-grid" style="display: grid; gap: 2rem;">
                     <!-- Latest Updates -->
                     <div style="background: var(--color-bg-surface); border-radius: var(--radius-lg); padding: 1.5rem; box-shadow: var(--shadow-sm);">
-                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
-                            <h4 style="font-size: 1.1rem; font-weight: 600;">Latest School Updates</h4>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; gap: 1rem; flex-wrap: wrap;">
+                            <h4 class="dashboard-section-title" style="font-size: 1.1rem; font-weight: 600;">Latest School Updates</h4>
                             <a href="#" class="view-all-link">View All</a>
                         </div>
                         
@@ -300,7 +331,7 @@
 
                     <!-- Quick Actions -->
                     <div style="background: var(--color-bg-surface); border-radius: var(--radius-lg); padding: 1.5rem; box-shadow: var(--shadow-sm);">
-                        <h4 style="font-size: 1.1rem; font-weight: 600; margin-bottom: 1.5rem;">Quick Actions</h4>
+                        <h4 class="dashboard-section-title" style="font-size: 1.1rem; font-weight: 600; margin-bottom: 1.5rem;">Quick Actions</h4>
                         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
                             <button class="btn btn-outline" style="justify-content: center; padding: 1rem;"><i data-lucide="credit-card"></i> Pay Fees</button>
                             <button class="btn btn-outline" style="justify-content: center; padding: 1rem;"><i data-lucide="phone"></i> Help Desk</button>

@@ -85,6 +85,27 @@
             .dashboard-main { padding-top: 70px; }
             .dashboard-header { position: fixed; width: 100%; top: 0; z-index: 500; }
         }
+
+        /* Responsive Utilities */
+        @media (max-width: 900px) {
+            .hide-mobile { display: none !important; }
+            .show-mobile-only { display: flex !important; }
+        }
+        @media (min-width: 901px) {
+            .show-mobile-only { display: none !important; }
+        }
+
+        .sidebar-toggles {
+            display: none;
+            padding: 1rem 1.5rem;
+            gap: 1rem;
+            border-top: 1px solid var(--color-border);
+        }
+        .sidebar-toggles .theme-toggle {
+            flex: 1;
+            justify-content: center;
+            border: 1px solid var(--color-border);
+        }
         </style>
     <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
 </head>
@@ -123,6 +144,10 @@
             </nav>
             
             <div class="sidebar-footer">
+                <div class="sidebar-toggles show-mobile-only">
+                    <button class="theme-toggle theme-toggle-btn" aria-label="Toggle dark mode"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg></button>
+                    <button class="theme-toggle rtl-toggle-btn" aria-label="Toggle RTL" style="font-weight: 800; font-size: 0.75rem;">RTL</button>
+                </div>
                 <a href="login.html" class="nav-link nav-link-danger">
                     <i data-lucide="log-out"></i> Logout
                 </a>
@@ -138,8 +163,8 @@
                 </div>
                 
                 <div style="display: flex; align-items: center; gap: 1rem;">
-                    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg></button>
-                    <button id="rtl-toggle" class="theme-toggle" aria-label="Toggle RTL" style="font-weight: 800; font-size: 0.75rem;">RTL</button>
+                    <button class="theme-toggle theme-toggle-btn hide-mobile" aria-label="Toggle dark mode"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg></button>
+                    <button class="theme-toggle rtl-toggle-btn hide-mobile" aria-label="Toggle RTL" style="font-weight: 800; font-size: 0.75rem;">RTL</button>
                     <div class="user-profile-btn">
                         <div class="user-avatar">SJ</div>
                     </div>

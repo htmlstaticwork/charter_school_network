@@ -249,3 +249,27 @@
     font-size: 1.75rem;
   }
 }
+
+/* Extra Narrow Mobile View (< 320px) */
+@media (max-width: 320px) {
+  .container {
+    padding: 0 0.5rem; /* Reduce padding to free up space */
+  }
+  
+  .navbar-brand span {
+    font-size: 1.25rem; /* Shrink logo text */
+  }
+  
+  .hero-actions .btn,
+  .cta-section-actions .btn {
+    min-width: 100% !important; /* Force full width on tiny screens */
+  }
+
+  .rtl-toggle-btn {
+    display: none !important; /* Hide secondary toggle in header for extreme small viewports */
+  }
+  
+  .section-title {
+    font-size: 1.5rem !important;
+  }
+}

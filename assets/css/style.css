@@ -61,6 +61,11 @@ html {
   scroll-behavior: smooth;
 }
 
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
 body {
   font-family: var(--font-family-sans);
   background-color: var(--color-bg-main);
@@ -383,31 +388,41 @@ body.dark-mode .status-pending { background-color: var(--color-status-pending-bg
   cursor: pointer;
 }
 
-/* Theme Toggle Button */
-.theme-toggle {
-  background: transparent;
+/* Theme & RTL Toggles */
+.theme-toggle,
+.theme-toggle-btn,
+.rtl-toggle-btn {
+  background-color: var(--color-bg-alt);
   border: 1px solid var(--color-border);
-  color: var(--color-text-heading);
-  width: 40px;
+  color: var(--color-text-main);
   height: 40px;
-  border-radius: 50%;
-  display: flex;
+  min-width: 40px;
+  padding: 0 0.75rem;
+  border-radius: var(--radius-md);
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   transition: all var(--transition-normal);
+  font-weight: 700;
+  font-size: 0.75rem;
+  gap: 0.5rem;
 }
 
-.theme-toggle:hover {
-  background-color: var(--color-bg-alt);
+.theme-toggle:hover,
+.theme-toggle-btn:hover,
+.rtl-toggle-btn:hover {
+  background-color: var(--color-border);
   color: var(--color-secondary);
   border-color: var(--color-secondary);
   transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
 }
 
-.theme-toggle i {
-  width: 20px;
-  height: 20px; stroke-width: 2px;
+.theme-toggle i, .theme-toggle-btn i, .theme-toggle-btn svg, .rtl-toggle-btn svg {
+  width: 18px;
+  height: 18px;
+  stroke-width: 2px;
 }
 
 /* ==========================================================================

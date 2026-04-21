@@ -1,21 +1,25 @@
 if (typeof lucide !== 'undefined') { lucide.createIcons(); }
 document.addEventListener('DOMContentLoaded', () => {
     // Mobile menu toggle
-    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    const mobileMenuToggles = document.querySelectorAll('.mobile-menu-toggle');
     const navbarNav = document.querySelector('.navbar-nav');
     
-    if (mobileMenuToggle && navbarNav) {
-        mobileMenuToggle.addEventListener('click', () => {
-            navbarNav.classList.toggle('active');
-            const icon = mobileMenuToggle.querySelector('i');
-            if(icon) {
-                if(navbarNav.classList.contains('active')) {
-                    icon.setAttribute('data-lucide', 'x');
-                } else {
-                    icon.setAttribute('data-lucide', 'menu');
+    if (mobileMenuToggles.length > 0 && navbarNav) {
+        mobileMenuToggles.forEach(toggle => {
+            toggle.addEventListener('click', () => {
+                navbarNav.classList.toggle('active');
+                const icon = toggle.querySelector('i');
+                if(icon) {
+                    if(navbarNav.classList.contains('active')) {
+                        icon.setAttribute('data-lucide', 'x');
+                    } else {
+                        icon.setAttribute('data-lucide', 'menu');
+                    }
+                    if (typeof lucide !== 'undefined') {
+                        lucide.createIcons();
+                    }
                 }
-                lucide.createIcons();
-            }
+            });
         });
     }
 
@@ -24,8 +28,11 @@ document.addEventListener('DOMContentLoaded', () => {
     dropdownToggles.forEach(toggle => {
         toggle.addEventListener('click', (e) => {
             if(window.innerWidth <= 1024) {
-                e.preventDefault();
-                toggle.parentElement.classList.toggle('open');
+                const dropdownMenu = toggle.nextElementSibling;
+                if (dropdownMenu && dropdownMenu.classList.contains('dropdown-menu')) {
+                    e.preventDefault();
+                    toggle.parentElement.classList.toggle('open');
+                }
             }
         });
     });
@@ -36,9 +43,9 @@ document.addEventListener('DOMContentLoaded', () => {
     function updateThemeUI(isDark) {
         themeToggles.forEach(btn => {
             if (isDark) {
-                btn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg>`;
+                btn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sun"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>`;
             } else {
-                btn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg>`;
+                btn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-moon"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>`;
             }
         });
         if (typeof lucide !== 'undefined') {
